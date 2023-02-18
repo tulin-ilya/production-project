@@ -1,0 +1,15 @@
+.primary {
+    background: var(--bg-primary);
+}
+
+.secondary {
+    background: var(--bg-secondary);
+}
+
+.inverted-primary {
+    background: var(--bg-inverted-primary);
+}
+
+.inverted-secondary {
+    background: var(--bg-inverted-secondary);
+}
