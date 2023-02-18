@@ -1,6 +1,11 @@
 import { useCallback, useContext } from "react";
 
-import { DARK, LIGHT, LOCAL_STORAGE_THEME_KEY } from "../config";
+import {
+    DARK,
+    LIGHT,
+    LOCAL_STORAGE_THEME_KEY,
+} from "@shared/config/theme-config";
+
 import { TTheme } from "../models";
 import { ThemeContext } from "../components/theme-context";
 

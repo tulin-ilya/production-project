@@ -1,4 +1,4 @@
-import type { DARK, LIGHT } from "./config";
+import type { DARK, LIGHT } from "@shared/config/theme-config";
 
 export type TTheme = typeof LIGHT | typeof DARK;
 

@@ -1,4 +1,4 @@
-import { ThemeProvider } from "@shared/providers/theme-provider";
+import { ThemeProvider } from "@app/providers/theme-provider";
 
 import AppComponent from "./app";
 
