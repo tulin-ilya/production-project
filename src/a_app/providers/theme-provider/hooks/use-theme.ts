@@ -4,7 +4,7 @@ import {
     DARK,
     LIGHT,
     LOCAL_STORAGE_THEME_KEY,
-} from "@shared/config/theme-config";
+} from "@shared/configs/theme-config";
 
 import { TTheme } from "../models";
 import { ThemeContext } from "../components/theme-context";

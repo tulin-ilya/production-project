@@ -1,0 +1,19 @@
+.link {
+    text-decoration: none;
+}
+
+.primary {
+    color: var(--color-primary);
+}
+
+.secondary {
+    color: var(--color-secondary);
+}
+
+.inverted-primary {
+    color: var(--color-inverted-primary);
+}
+
+.inverted-secondary {
+    color: var(--color-inverted-secondary);
+}

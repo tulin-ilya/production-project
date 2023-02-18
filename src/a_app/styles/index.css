@@ -1,14 +1,14 @@
 @import "@shared/styles/vars/global.css";
+@import "@shared/styles/vars/themes/dark.css";
+@import "@shared/styles/vars/themes/light.css";
 
-@import "./themes/dark.css";
-@import "./themes/light.css";
 @import "./reset.css";
 
 .app {
     font: var(--font-m);
 
-    background: var(--bg-color);
-    color: var(--primary-color);
+    background: var(--bg-primary);
+    color: var(--color-primary);
 
     min-height: 100vh;
 }
