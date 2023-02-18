@@ -2,13 +2,13 @@ import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import cn from "./helpers/classnames";
-import { AboutPageLazy } from "./pages/about-page/about-page.lazy";
-import { MainPageLazy } from "./pages/main-page/main-page.lazy";
-import { useTheme } from "./theme-provider/use-theme";
-import "./styles/index.css";
+import { useTheme } from "@shared/providers/theme-provider";
+import { MainPage } from "@pages/main-page";
+import { AboutPage } from "@pages/about-page";
+import cn from "../g_shared/lib/classnames";
+import "@shared/styles/index.css";
 
-const App = () => {
+const AppCompoenent = () => {
     const { theme, toggleTheme } = useTheme();
     return (
         <div className={cn("app", {}, [theme])}>
@@ -16,12 +16,12 @@ const App = () => {
             <button onClick={toggleTheme}>toggle theme</button>
             <Suspense fallback={<div>loading...</div>}>
                 <Routes>
-                    <Route path="/" element={<MainPageLazy />} />
-                    <Route path="/about" element={<AboutPageLazy />} />
+                    <Route path="/" element={<MainPage />} />
+                    <Route path="/about" element={<AboutPage />} />
                 </Routes>
             </Suspense>
         </div>
     );
 };
 
-export default App;
+export default AppCompoenent;

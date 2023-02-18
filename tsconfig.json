@@ -8,7 +8,16 @@
         "allowJs": true,
         "moduleResolution": "node",
         "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": ".",
+        "paths": {
+            "@app/*": ["./src/a_app/*"],
+            "@processes/*": ["./src/b_processes/*"],
+            "@pages/*": ["./src/c_pages/*"],
+            "@widgets/*": ["./src/d_widgets/*"],
+            "@features/*": ["./src/e_features/*"],
+            "@shared/*": ["./src/g_shared/*"]
+        }
     },
     "ts-node": {
         "compilerOptions": {

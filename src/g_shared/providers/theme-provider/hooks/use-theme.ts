@@ -1,8 +1,8 @@
 import { useCallback, useContext } from "react";
 
-import { DARK, LIGHT, LOCAL_STORAGE_THEME_KEY } from "./config";
-import { TTheme } from "./models";
-import { ThemeContext } from "./theme-context";
+import { DARK, LIGHT, LOCAL_STORAGE_THEME_KEY } from "../config";
+import { TTheme } from "../models";
+import { ThemeContext } from "../components/theme-context";
 
 type TUseTheme = {
     theme: TTheme;
