@@ -11,7 +11,7 @@ export type TView =
     | typeof INVERTED_PRIMARY
     | typeof INVERTED_SECONDARY;
 
-export type TUiComponentBaseType = {
+export type TComponentBaseProps = {
     /** Для margin и padding */
     className?: string;
     /** Вид */

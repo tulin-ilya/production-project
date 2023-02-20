@@ -1,6 +1,6 @@
 @import "@shared/styles/vars/global.css";
-@import "@shared/styles/vars/themes/dark.css";
-@import "@shared/styles/vars/themes/light.css";
+@import "@shared/styles/themes/dark.css";
+@import "@shared/styles/themes/light.css";
 
 @import "./reset.css";
 

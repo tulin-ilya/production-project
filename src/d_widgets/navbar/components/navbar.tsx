@@ -10,8 +10,8 @@ export const Navbar = memo<TNavbarProps>(
     ({ className, view = "secondary" }) => {
         return (
             <div className={cn(styles.navbar, styles[view], className)}>
-                <div></div>
-                <div className={cn(styles["links-container"])}>
+                <div className={cn(styles["navbar-container"])}></div>
+                <div className={cn(styles["navbar-container"])}>
                     <AppLink view="secondary" to={"/"}>
                         Home
                     </AppLink>

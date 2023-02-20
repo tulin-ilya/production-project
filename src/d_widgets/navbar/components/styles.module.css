@@ -8,7 +8,7 @@
     padding: var(--gap-12) var(--gap-20);
 }
 
-.links-container {
+.navbar-container {
     display: flex;
     gap: var(--gap-12);
 }
