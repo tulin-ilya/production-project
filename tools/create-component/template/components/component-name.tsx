@@ -1,7 +1,9 @@
+import cn from "classnames";
 import { memo } from "react";
 
 import { TComponentNameProps } from "./models";
-
-export const ComponentName = memo<TComponentNameProps>(() => {
-    return <></>;
+import styles from "./styles.module.css";
+// @ts-ignore
+export const ComponentName = memo<TComponentNameProps>(({ className }) => {
+    return <div className={cn(styles["component-name"], className)}></div>;
 });

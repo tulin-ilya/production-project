@@ -10,5 +10,6 @@
 
 .navbar-container {
     display: flex;
+    align-items: center;
     gap: var(--gap-12);
 }

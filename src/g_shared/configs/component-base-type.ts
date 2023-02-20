@@ -1,4 +1,5 @@
 import {
+    CLEAR,
     INVERTED_PRIMARY,
     INVERTED_SECONDARY,
     PRIMARY,
@@ -6,6 +7,7 @@ import {
 } from "@shared/configs/components-view";
 
 export type TView =
+    | typeof CLEAR
     | typeof PRIMARY
     | typeof SECONDARY
     | typeof INVERTED_PRIMARY

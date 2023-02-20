@@ -22,7 +22,7 @@ export const buildLoaders = ({
                     modules: {
                         auto: /\.module\./,
                         localIdentName: isDev
-                            ? "[path][name]__[local]"
+                            ? "[file]__[local]"
                             : "[hash:base64:8]",
                     },
                 },
@@ -31,5 +31,19 @@ export const buildLoaders = ({
         ],
     };
 
-    return [typescriptLoader, scssLoader];
+    const svgLoader = {
+        test: /\.svg$/,
+        use: ["@svgr/webpack"],
+    };
+
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+        use: [
+            {
+                loader: "file-loader",
+            },
+        ],
+    };
+
+    return [svgLoader, fileLoader, typescriptLoader, scssLoader];
 };

@@ -9,5 +9,8 @@ export const formatData = (
         .replaceAll("component-name", componentName)
         .replaceAll("ComponentName", toPascalCase(componentName))
         .replaceAll("component-type", baseType)
-        .replaceAll("ComponentType", toPascalCase(baseType)));
+        .replaceAll("ComponentType", toPascalCase(baseType))).replaceAll(
+        "// @ts-ignore",
+        ""
+    );
 };

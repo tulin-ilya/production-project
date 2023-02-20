@@ -5,11 +5,11 @@ import customCN from "@shared/lib/classnames";
 import "@app/styles/index.css";
 
 const AppCompoenent = () => {
-    const { theme, toggleTheme } = useTheme();
+    const { theme } = useTheme();
     return (
         <div className={customCN("app", {}, [theme])}>
             <Navbar />
-            <button onClick={toggleTheme}>toggle theme</button>
+
             <AppRouter />
         </div>
     );
