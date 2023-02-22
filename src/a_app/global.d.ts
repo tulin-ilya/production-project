@@ -1,35 +1,9 @@
-// declare module "*.module.css";
-// declare module "*.module.scss";
-
-// declare module "*.css" {
-//   interface IClassNames {
-//     [key: string]: string;
-//   }
-//   const ClassNames: IClassNames
-//   export default ClassNames
-// }
-
 declare module "*.module.css" {
     const classes: { [key: string]: string };
     export default classes;
 }
 
 declare module "*.module.scss" {
-    const classes: { [key: string]: string };
-    export default classes;
-}
-
-declare module "*.module.sass" {
-    const classes: { [key: string]: string };
-    export default classes;
-}
-
-declare module "*.module.less" {
-    const classes: { [key: string]: string };
-    export default classes;
-}
-
-declare module "*.module.styl" {
     const classes: { [key: string]: string };
     export default classes;
 }
@@ -43,8 +17,4 @@ declare module "*.svg" {
     export default SVG;
 }
 
-// declare module "*.tsx" {
-//     function forwardRef<T, P = {}>(
-//         render: (props: P, ref: React.Ref<T>) => React.ReactElement | null
-//     ): (props: P & React.RefAttributes<T>) => React.ReactElement | null;
-// }
+declare const __IS_DEV: boolean;

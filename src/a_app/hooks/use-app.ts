@@ -7,7 +7,7 @@ export const useApp = () => {
     const navbarRef = useRef<HTMLDivElement>();
 
     useEffect(() => {
-        setSidebarOffset(navbarRef.current.offsetHeight);
+        setSidebarOffset(navbarRef.current?.offsetHeight);
     }, []);
 
     const { theme } = useTheme();
