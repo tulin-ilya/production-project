@@ -7,13 +7,15 @@ export const AppRouter = () => {
     const { routes } = useAppRoutes();
 
     return (
-        <Suspense fallback={<div>loading...</div>}>
-            <Routes>
-                {routes.map((item) => (
-                    <Route key={item.path} {...item} />
-                ))}
-            </Routes>
-        </Suspense>
+        <div className="page-wrapper">
+            <Suspense fallback={<div>loading...</div>}>
+                <Routes>
+                    {routes.map((item) => (
+                        <Route key={item.path} {...item} />
+                    ))}
+                </Routes>
+            </Suspense>
+        </div>
     );
 };
 
