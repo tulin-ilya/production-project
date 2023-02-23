@@ -7,7 +7,7 @@ import { Button } from "@shared/ui-components/button";
 import { TLangSwitcherProps } from "./models";
 import styles from "./styles.module.css";
 
-export const LangSwitcher = memo<TLangSwitcherProps>(({ className }) => {
+export const LangSwitcher = memo(({ className, view }: TLangSwitcherProps) => {
     const { t, i18n } = useTranslation();
 
     const toggle = () => {
