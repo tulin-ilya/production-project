@@ -4,7 +4,7 @@ import { memo } from "react";
 import { TiconProps } from "./models";
 import styles from "./styles.module.scss";
 
-export const MoonIcon = memo<TiconProps>(({ view, className }) => (
+export const MoonIcon = memo(({ view, className }: TiconProps) => (
     <svg
         width="24"
         height="24"

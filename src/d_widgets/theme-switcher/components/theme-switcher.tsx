@@ -10,7 +10,7 @@ import { useTheme } from "@app/providers/theme-provider";
 import { TThemeSwitcherProps } from "./models";
 import styles from "./styles.module.css";
 
-export const ThemeSwitcher = memo<TThemeSwitcherProps>(({ className }) => {
+export const ThemeSwitcher = memo(({ className }: TThemeSwitcherProps) => {
     const { theme, toggleTheme } = useTheme();
     return (
         <div

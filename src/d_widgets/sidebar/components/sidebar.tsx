@@ -4,12 +4,11 @@ import { memo, useEffect, useRef, useState } from "react";
 import { TSidebarProps } from "./models";
 import styles from "./styles.module.css";
 
-export const Sidebar = memo<TSidebarProps>(
-    ({ className, view = "secondary", upperOffset }) => {
+export const Sidebar = memo(
+    ({ className, view = "secondary", upperOffset }: TSidebarProps) => {
         const sidebarRef = useRef<HTMLDivElement>();
         const [height, setHeight] = useState<number>();
         const [collapsed, setCollapsed] = useState(false);
-        // const { clientHeight } = document.documentElement;
 
         useEffect(() => {
             if (upperOffset)
