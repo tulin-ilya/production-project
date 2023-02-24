@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 export const useApp = () => {
     const [sidebarOffset, setSidebarOffset] = useState<number | undefined>();
 
-    const navbarRef = useRef<HTMLDivElement>();
+    const navbarRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         setSidebarOffset(navbarRef.current?.offsetHeight);

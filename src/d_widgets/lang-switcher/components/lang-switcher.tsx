@@ -1,8 +1,7 @@
+import { Button } from "@shared/ui-components/button";
 import cn from "classnames";
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
-
-import { Button } from "@shared/ui-components/button";
 
 import { TLangSwitcherProps } from "./models";
 import styles from "./styles.module.css";

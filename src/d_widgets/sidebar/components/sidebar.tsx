@@ -6,12 +6,12 @@ import styles from "./styles.module.css";
 
 export const Sidebar = memo(
     ({ className, view = "secondary", upperOffset }: TSidebarProps) => {
-        const sidebarRef = useRef<HTMLDivElement>();
+        const sidebarRef = useRef<HTMLDivElement>(null);
         const [height, setHeight] = useState<number>();
         const [collapsed, setCollapsed] = useState(false);
 
         useEffect(() => {
-            if (upperOffset)
+            if (upperOffset && sidebarRef.current)
                 setHeight(sidebarRef.current.clientHeight - upperOffset);
         }, [upperOffset, sidebarRef.current?.clientHeight]);
 

@@ -1,7 +1,7 @@
-import type { RouteProps } from "react-router-dom";
 import { AboutPage } from "@pages/about-page";
 import { MainPage } from "@pages/main-page";
-import { ABOUT, MAIN, HOME } from "@shared/configs/routes-config";
+import { ABOUT, HOME, MAIN } from "@shared/configs/routes-config";
+import type { RouteProps } from "react-router-dom";
 
 export const routes: RouteProps[] = [
     {

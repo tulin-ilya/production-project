@@ -1,5 +1,5 @@
-import { memo } from "react";
 import cn from "classnames";
+import { memo } from "react";
 
 import { TiconProps } from "./models";
 import styles from "./styles.module.scss";

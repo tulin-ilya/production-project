@@ -1,11 +1,11 @@
-import { Suspense } from "react";
-import cn from "classnames";
+import "@app/styles/index.css";
 
 import { AppRouter } from "@app/providers/app-router/components/app-router";
+import customCN from "@shared/lib/classnames";
 import { Navbar } from "@widgets/navbar";
 import { Sidebar } from "@widgets/sidebar";
-import customCN from "@shared/lib/classnames";
-import "@app/styles/index.css";
+import cn from "classnames";
+import { Suspense } from "react";
 
 import { useApp } from "./hooks/use-app";
 

@@ -1,8 +1,8 @@
-import { useMemo, useState } from "react";
+import { LIGHT, LOCAL_STORAGE_THEME_KEY } from "@shared/configs/theme-config";
 import type { FC } from "react";
+import { useMemo, useState } from "react";
 
 import type { TTheme } from "../models";
-import { LIGHT, LOCAL_STORAGE_THEME_KEY } from "@shared/configs/theme-config";
 import { ThemeContext } from "./theme-context";
 
 const defaultTheme =
