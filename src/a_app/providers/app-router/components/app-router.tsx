@@ -8,6 +8,7 @@ export const AppRouter = () => {
 
     return (
         <div className="page-wrapper">
+            {/* eslint-disable-next-line i18next/no-literal-string */}
             <Suspense fallback={<div>loading...</div>}>
                 <Routes>
                     {routes.map((item) => (

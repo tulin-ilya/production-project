@@ -1,11 +1,10 @@
 @import "@shared/styles/view/bg-view";
 
 .sidebar {
-    border-right: solid 1px var(--color-secondary);
-    padding: var(--gap-20) var(--gap-12);
     width: 300px;
     height: 100vh;
-
+    padding: var(--gap-20) var(--gap-12);
+    border-right: solid 1px var(--color-secondary);
     transition: width 0.3s;
 }
 

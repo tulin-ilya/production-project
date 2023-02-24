@@ -1,13 +1,12 @@
-/* eslint-disable no-undef */
 module.exports = {
     env: {
         browser: true,
         es2021: true,
     },
     extends: [
-        "eslint:recommended",
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:i18next/recommended",
     ],
     parser: "@typescript-eslint/parser",
     parserOptions: {
@@ -17,9 +16,10 @@ module.exports = {
         ecmaVersion: "latest",
         sourceType: "module",
     },
-    plugins: ["react", "@typescript-eslint", "simple-import-sort"],
+    plugins: ["react", "@typescript-eslint", "simple-import-sort", "i18next"],
     rules: {
         indent: [2, 4],
+        "i18next/no-literal-string": ["error", { markupOnly: true }],
         "import/no-unresolved": "off",
         "import/prefer-default-export": "off",
         "import/extensions": "off",

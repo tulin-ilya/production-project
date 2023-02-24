@@ -1,0 +1,12 @@
+{
+    "extends": [
+        "stylelint-config-standard-scss",
+        "stylelint-config-idiomatic-order"
+    ],
+    "rules": {
+        "indentation": [4, { "ignore": ["inside-parens"] }],
+        "import-notation": "string",
+        "value-list-comma-newline-after": null,
+        "declaration-colon-newline-after": null
+    }
+}

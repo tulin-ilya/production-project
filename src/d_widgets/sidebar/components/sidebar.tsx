@@ -30,6 +30,7 @@ export const Sidebar = memo(
                 )}
                 style={{ height }}
             >
+                {/* eslint-disable-next-line i18next/no-literal-string */}
                 <button onClick={onToggle}>toggle</button>
             </div>
         );
