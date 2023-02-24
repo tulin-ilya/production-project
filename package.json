@@ -10,7 +10,9 @@
         "build:dev": "webpack --env mode=development",
         "create-component": "ts-node ./tools/create-component",
         "eslint": "npx eslint \"**/*.{js, jsx, ts,tsx}\"",
-        "eslint:fix": "npx eslint \"**/*.{js, jsx, ts,tsx}\" --fix"
+        "eslint:fix": "npx eslint \"**/*.{js, jsx, ts, tsx}\" --fix",
+        "stylelint": "npx stylelint \"**/*.{css, scss}\"",
+        "stylelint:fix": "npx stylelint \"**/*.{css, scss}\" --fix"
     },
     "devDependencies": {
         "@svgr/webpack": "6.2.1",
@@ -26,6 +28,7 @@
         "css-loader": "^6.6.0",
         "eslint": "^8.10.0",
         "eslint-config-airbnb": "^19.0.4",
+        "eslint-plugin-i18next": "^6.0.0-6",
         "eslint-plugin-import": "^2.25.4",
         "eslint-plugin-jsx-a11y": "^6.5.1",
         "eslint-plugin-react": "^7.29.2",
@@ -38,6 +41,10 @@
         "sass": "^1.49.9",
         "sass-loader": "^12.6.0",
         "style-loader": "^3.3.1",
+        "stylelint": "^14.5.3",
+        "stylelint-config-idiomatic-order": "^9.0.0",
+        "stylelint-config-standard": "^30.0.1",
+        "stylelint-config-standard-scss": "^3.0.0",
         "ts-loader": "^9.2.6",
         "ts-node": "^10.5.0",
         "typescript": "^4.5.5",

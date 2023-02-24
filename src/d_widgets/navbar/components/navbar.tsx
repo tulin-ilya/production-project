@@ -22,10 +22,10 @@ const NavbarComponent = forwardRef(
             >
                 <div className={cn(styles["navbar-container"])}></div>
                 <div className={cn(styles["navbar-container"])}>
-                    <AppLink view="secondary" to={"/"}>
+                    <AppLink view="secondary" to="/">
                         {t("home")}
                     </AppLink>
-                    <AppLink view="secondary" to={"/about"}>
+                    <AppLink view="secondary" to="/about">
                         {t("about")}
                     </AppLink>
                     <ThemeSwitcher />

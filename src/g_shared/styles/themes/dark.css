@@ -1,11 +1,13 @@
 .app.dark {
+    /** Цвет бэкграунда */
     --bg-primary: #1f1f1f;
     --bg-secondary: #303030;
-    --bg-inverted-primary: #ffffff;
+    --bg-inverted-primary: #fff;
     --bg-inverted-secondary: #f0f0f0;
 
-    --color-primary: #ffffff;
-    --color-secondary: #ffffff66;
+    /** Цвет текста */
+    --color-primary: #fff;
+    --color-secondary: #fff6;
     --color-inverted-primary: #0b1f35;
     --color-inverted-secondary: #0b1f35b3;
 }

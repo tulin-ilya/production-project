@@ -1,9 +1,9 @@
 @import "@shared/styles/vars/global.css";
 
 * {
-    margin: var(--gap-0);
-    padding: var(--gap-0);
     box-sizing: border-box;
+    padding: var(--gap-0);
+    margin: var(--gap-0);
 }
 
 input,

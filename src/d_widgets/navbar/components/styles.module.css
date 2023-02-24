@@ -2,9 +2,9 @@
 
 .navbar {
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
     padding: var(--gap-12) var(--gap-20);
     border-bottom: solid 1px var(--color-secondary);
 }
