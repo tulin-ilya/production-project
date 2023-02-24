@@ -1,7 +1,8 @@
 import path from "path";
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const inquirer = require("inquirer");
 
-import { prompts, paths } from "./config";
+import { paths, prompts } from "./config";
 import { createFn } from "./create-fn";
 
 const template = path.resolve(__dirname, "template");
