@@ -1,1 +1,1 @@
-export { AppRouter } from "./components/app-router";
+export { AppRouter } from "./app-router";

@@ -5,12 +5,13 @@
     "author": "Ilya Tulin",
     "license": "MIT",
     "scripts": {
-        "start": "webpack serve --env port=3000",
         "build:prod": "webpack --env mode=production",
         "build:dev": "webpack --env mode=development",
         "create-component": "ts-node ./tools/create-component",
+        "drop-cache": "rm -rf node_modules/.cache .webpackcache .jestcache .eslintcache .stylelintcache .tersercache",
         "eslint": "npx eslint \"**/*.{js, jsx, ts,tsx}\"",
         "eslint:fix": "npx eslint \"**/*.{js, jsx, ts, tsx}\" --fix",
+        "start": "yarn drop-cache && webpack serve --env port=3000",
         "stylelint": "npx stylelint \"**/*.{css, scss}\"",
         "stylelint:fix": "npx stylelint \"**/*.{css, scss}\" --fix",
         "test": "jest"

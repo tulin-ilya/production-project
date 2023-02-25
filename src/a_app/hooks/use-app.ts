@@ -1,14 +1,17 @@
 import { useTheme } from "@app/providers/theme-provider";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export const useApp = () => {
-    const [sidebarOffset, setSidebarOffset] = useState<number | undefined>();
+    const [sidebarOffset, setSidebarOffset] = useState<number>();
 
     const navbarRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        setSidebarOffset(navbarRef.current?.offsetHeight);
-    }, []);
+        const temp = navbarRef.current?.getBoundingClientRect();
+        console.log(temp);
+
+        // setSidebarOffset(navbarRef.current?.offsetHeight);
+    }, [navbarRef]);
 
     const { theme } = useTheme();
 

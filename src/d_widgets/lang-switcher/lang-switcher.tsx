@@ -1,4 +1,4 @@
-import { Button } from "@shared/ui-components/button";
+import { Button } from "@shared/ui-kit/button";
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 

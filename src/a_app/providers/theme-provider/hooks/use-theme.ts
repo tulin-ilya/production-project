@@ -5,7 +5,7 @@ import {
 } from "@shared/configs/theme-config";
 import { useCallback, useContext } from "react";
 
-import { ThemeContext } from "../components/theme-context";
+import { ThemeContext } from "../theme-context";
 import type { TTheme, TThemeContextProps } from "../models";
 
 type TUseTheme = {

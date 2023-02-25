@@ -1,4 +1,4 @@
-import { AppLink } from "@shared/ui-components/app-link";
+import { AppLink } from "@shared/ui-kit/app-link";
 import { LangSwitcher } from "@widgets/lang-switcher";
 import { ThemeSwitcher } from "@widgets/theme-switcher";
 import cn from "classnames";
@@ -14,6 +14,7 @@ const NavbarComponent = forwardRef(
         ref?: Ref<HTMLDivElement>
     ) => {
         const { t } = useTranslation("navbar");
+        // console.log(ref);
 
         return (
             <div

@@ -1,4 +1,3 @@
-
 import { TWidgetBaseProps } from "@shared/configs/widget-base-type";
 
-export type TLangSwitcherProps = TWidgetBaseProps & {};
+export type TPageLoaderProps = TWidgetBaseProps;

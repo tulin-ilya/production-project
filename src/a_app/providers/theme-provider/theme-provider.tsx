@@ -2,7 +2,7 @@ import { LIGHT, LOCAL_STORAGE_THEME_KEY } from "@shared/configs/theme-config";
 import type { FC } from "react";
 import { useMemo, useState } from "react";
 
-import type { TTheme } from "../models";
+import type { TTheme } from "./models";
 import { ThemeContext } from "./theme-context";
 
 const defaultTheme =
