@@ -45,5 +45,16 @@ export const buildLoaders = ({
         ],
     };
 
-    return [svgLoader, fileLoader, typescriptLoader, scssLoader];
+    const babelLoader = {
+        test: /\.(js|jsx|ts|tsx)/,
+        exclude: /node_modules/,
+        use: {
+            loader: "babel-loader",
+            options: {
+                presets: ["@babel/preset-env"],
+            },
+        },
+    };
+
+    return [svgLoader, fileLoader, babelLoader, typescriptLoader, scssLoader];
 };
