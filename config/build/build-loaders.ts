@@ -5,7 +5,6 @@ import { TBuildOptions } from "./typings";
 export const buildLoaders = ({
     isDev,
 }: TBuildOptions): webpack.RuleSetRule[] => {
-    // Если не использовать ts то нужен babel-loader
     const typescriptLoader = {
         test: /\.tsx?$/,
         use: "ts-loader",
