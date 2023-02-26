@@ -10,15 +10,14 @@ import { Suspense } from "react";
 import { useApp } from "./hooks/use-app";
 
 const AppCompoenent = () => {
-    const { navbarRef, sidebarOffset, theme } = useApp();
-    // console.log(sidebarOffset);
+    const { theme } = useApp();
 
     return (
         <div className={customCN("app", {}, [theme])}>
             <Suspense fallback="">
-                <Navbar ref={navbarRef} />
+                <Navbar />
                 <div className={cn("content-page")}>
-                    <Sidebar upperOffset={sidebarOffset} />
+                    <Sidebar />
                     <AppRouter />
                 </div>
             </Suspense>

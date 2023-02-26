@@ -1,21 +1,16 @@
 import cn from "classnames";
-import { memo, useEffect, useRef, useState } from "react";
+import { memo } from "react";
 
+import { useSidebar } from "./hooks/use-sidebar";
 import { TSidebarProps } from "./models";
 import styles from "./styles.module.css";
 
 export const Sidebar = memo(
-    ({ className, view = "secondary", upperOffset }: TSidebarProps) => {
-        const sidebarRef = useRef<HTMLDivElement>(null);
-        const [collapsed, setCollapsed] = useState(false);
-
-        const onToggle = () => {
-            setCollapsed((prev) => !prev);
-        };
+    ({ className, view = "secondary" }: TSidebarProps) => {
+        const { collapsed, onToggle } = useSidebar();
 
         return (
             <div
-                ref={sidebarRef}
                 className={cn(
                     styles["sidebar"],
                     { [styles.collapsed]: collapsed },
