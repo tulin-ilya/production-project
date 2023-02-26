@@ -4,7 +4,9 @@
 @import "./reset.css";
 
 .app {
+    display: flex;
     min-height: 100vh;
+    flex-direction: column;
     background: var(--bg-primary);
     color: var(--color-primary);
     font: var(--font-m);
@@ -12,6 +14,8 @@
 
 .content-page {
     display: flex;
+    flex-grow: 1;
+    align-items: stretch;
 }
 
 .page-wrapper {
