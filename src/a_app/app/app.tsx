@@ -1,4 +1,4 @@
-import "@app/styles/index.css";
+import "./styles/index.css";
 
 import { AppRouter } from "@app/providers/app-router/app-router";
 import customCN from "@shared/lib/classnames";

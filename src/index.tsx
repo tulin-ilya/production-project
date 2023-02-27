@@ -1,12 +1,6 @@
 import "@shared/configs/i18n";
 
-import { App } from "@app/index";
+import { App } from "@app/app";
 import { render } from "react-dom";
-import { BrowserRouter } from "react-router-dom";
 
-render(
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>,
-    document.getElementById("root")
-);
+render(<App />, document.getElementById("root"));
