@@ -1,3 +1,5 @@
+/* eslint-disable i18next/no-literal-string */
+import { Button } from "@shared/ui-kit/button";
 import cn from "classnames";
 import { memo } from "react";
 
@@ -11,6 +13,7 @@ export const Sidebar = memo(
 
         return (
             <div
+                data-testid={"sidebar"}
                 className={cn(
                     styles["sidebar"],
                     { [styles.collapsed]: collapsed },
@@ -18,8 +21,13 @@ export const Sidebar = memo(
                     className
                 )}
             >
-                {/* eslint-disable-next-line i18next/no-literal-string */}
-                <button onClick={onToggle}>toggle</button>
+                <Button
+                    data-testid={"sidebar-toggler"}
+                    view="normal"
+                    onClick={onToggle}
+                >
+                    toggle
+                </Button>
             </div>
         );
     }
