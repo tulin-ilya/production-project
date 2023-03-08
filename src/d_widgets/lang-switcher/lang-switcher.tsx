@@ -11,7 +11,9 @@ export const LangSwitcher = memo(() => {
 
     return (
         <>
-            <Button onClick={toggle}>{t("language")}</Button>
+            <Button view="secondary" onClick={toggle}>
+                {t("language")}
+            </Button>
         </>
     );
 });

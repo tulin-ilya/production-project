@@ -42,4 +42,10 @@ module.exports = {
         "simple-import-sort/imports": "error",
         "@typescript-eslint/ban-ts-comment": "warn",
     },
+    overrides: [
+        {
+            files: ["*.test.{tsx,ts}"],
+            rules: { "i18next/no-literal-string": "off" },
+        },
+    ],
 };

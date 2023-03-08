@@ -2,7 +2,7 @@
     "compilerOptions": {
         "outDir": "./dist/",
         "noImplicitAny": true,
-        "module": "ESNext",
+        "module": "esnext",
         "target": "es5",
         "jsx": "react-jsx",
         "lib": ["ESNext", "DOM"],
@@ -24,5 +24,6 @@
         "compilerOptions": {
             "module": "CommonJS"
         }
-    }
+    },
+    "include": ["./"]
 }

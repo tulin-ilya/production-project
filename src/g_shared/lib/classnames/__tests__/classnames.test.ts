@@ -1,4 +1,4 @@
-import classNames from "./index";
+import classNames from "../index";
 
 describe("classNames", () => {
     test("with only first param", () => {
