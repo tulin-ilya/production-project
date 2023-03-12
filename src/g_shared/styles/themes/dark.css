@@ -1,3 +1,4 @@
+:root,
 .app.dark {
     /** Цвет бэкграунда */
     --bg-primary: #1f1f1f;
@@ -10,9 +11,4 @@
     --color-secondary: #fff6;
     --color-inverted-primary: #0b1f35;
     --color-inverted-secondary: #0b1f35b3;
-
-    /** Общие */
-    --common-blue: #428fdc;
-    --common-yellow: #f1e05a;
-    --common-green: #2da160;
 }

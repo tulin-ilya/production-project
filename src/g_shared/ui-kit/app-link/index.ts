@@ -1,1 +1,1 @@
-export { AppLink } from "./app-ink";
+export { AppLink } from "./src/app-ink";

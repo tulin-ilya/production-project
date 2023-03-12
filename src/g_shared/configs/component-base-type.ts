@@ -1,8 +1,5 @@
 import {
     CLEAR,
-    INVERTED_NORMAL,
-    INVERTED_PRIMARY,
-    INVERTED_SECONDARY,
     NORMAL,
     PRIMARY,
     SECONDARY,
@@ -10,9 +7,6 @@ import {
 
 export type TView =
     | typeof CLEAR
-    | typeof INVERTED_NORMAL
-    | typeof INVERTED_PRIMARY
-    | typeof INVERTED_SECONDARY
     | typeof NORMAL
     | typeof PRIMARY
     | typeof SECONDARY;

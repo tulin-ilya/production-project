@@ -8,6 +8,7 @@ module.exports = {
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:i18next/recommended",
+        "plugin:storybook/recommended",
     ],
     parser: "@typescript-eslint/parser",
     parserOptions: {
@@ -20,7 +21,12 @@ module.exports = {
     plugins: ["react", "@typescript-eslint", "simple-import-sort", "i18next"],
     rules: {
         indent: [2, 4],
-        "i18next/no-literal-string": ["error", { markupOnly: true }],
+        "i18next/no-literal-string": [
+            "error",
+            {
+                markupOnly: true,
+            },
+        ],
         "import/no-unresolved": "off",
         "import/prefer-default-export": "off",
         "import/extensions": "off",
@@ -32,12 +38,14 @@ module.exports = {
         "react/jsx-indent-props": [2, 4],
         "react/require-default-props": "off",
         "react/react-in-jsx-scope": "off",
-        "react/jsx-props-no-spreading": "warn",
+        "react/jsx-props-no-spreading": "off",
         "react/function-component-definition": "off",
         "react/display-name": "off",
         "react/jsx-filename-extension": [
             2,
-            { extensions: [".js", ".jsx", ".tsx"] },
+            {
+                extensions: [".js", ".jsx", ".tsx"],
+            },
         ],
         "simple-import-sort/imports": "error",
         "@typescript-eslint/ban-ts-comment": "warn",
@@ -45,7 +53,9 @@ module.exports = {
     overrides: [
         {
             files: ["*.test.{tsx,ts}"],
-            rules: { "i18next/no-literal-string": "off" },
+            rules: {
+                "i18next/no-literal-string": "off",
+            },
         },
     ],
 };

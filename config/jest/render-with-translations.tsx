@@ -1,4 +1,4 @@
-import i18n from "@shared/configs/i18n/i18n-for-tests";
+import i18n from "@config/i18n/i18n-for-tests";
 import { render } from "@testing-library/react";
 import type { ReactNode } from "react";
 import { I18nextProvider } from "react-i18next";

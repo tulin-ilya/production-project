@@ -1,8 +1,18 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-primary);
+    cursor: pointer;
+    font: var(--font-m);
+    outline: none;
+}
+
 .clear {
     padding: 0;
     border: none;
     margin: 0;
     background: none;
+    color: var(--color-primary);
 }
 
 .not-clear {
@@ -24,6 +34,6 @@
 .primary {
     border-color: var(--color-secondary);
     background-color: var(--common-blue);
-    color: var(--color-inverted-secondary);
+    color: var(--color-inverted-primary);
     font-weight: 700;
 }
