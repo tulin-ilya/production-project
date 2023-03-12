@@ -1,3 +1,14 @@
+.sidebar {
+    width: 300px;
+    padding: var(--gap-20) var(--gap-12);
+    border-right: solid 1px var(--color-secondary);
+    transition: width 0.3s;
+}
+
+.collapsed {
+    width: 80px;
+}
+
 .primary {
     background: var(--bg-primary);
 }

@@ -1,1 +1,1 @@
-export { ErrorFallback } from "./error-fallback";
+export { ErrorFallback } from "./src/error-fallback";

@@ -1,3 +1,4 @@
+import path from "path";
 import webpack from "webpack";
 
 import type { TBuildOptions } from "./typings";
@@ -21,6 +22,8 @@ export const buildResolvers = (
             "@widgets": `${src}/d_widgets`,
             "@features": `${src}/e_features`,
             "@shared": `${src}/g_shared`,
+            "@config": `${path.resolve("config")}`,
+            "@tools": `${path.resolve("tools")}`,
         },
     };
 };

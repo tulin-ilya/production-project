@@ -11,7 +11,9 @@ export const ThemeSwitcher = memo(({ className }: TThemeSwitcherProps) => {
     const { theme, toggleTheme } = useTheme();
     return (
         <div className={className} onClick={toggleTheme}>
-            <Button>{theme === LIGHT ? <MoonIcon /> : <SunIcon />}</Button>
+            <Button view="clear">
+                {theme === LIGHT ? <MoonIcon /> : <SunIcon />}
+            </Button>
         </div>
     );
 });

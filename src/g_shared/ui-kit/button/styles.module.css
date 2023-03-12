@@ -1,8 +1,0 @@
-@import "@shared/styles/view/button-view";
-
-.button {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    outline: none;
-}

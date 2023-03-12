@@ -1,7 +1,7 @@
 import "./styles/index.css";
 
 import { AppRouter } from "@app/providers/app-router/app-router";
-import customCN from "@shared/lib/classnames";
+import customCN from "@tools/classnames";
 import { Navbar } from "@widgets/navbar";
 import { Sidebar } from "@widgets/sidebar";
 import cn from "classnames";

@@ -1,4 +1,4 @@
-import "@shared/configs/i18n";
+import "@config/i18n";
 
 import { App } from "@app/app";
 import { render } from "react-dom";

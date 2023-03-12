@@ -1,1 +1,1 @@
-export { ComponentName } from "./component-name";
+export { ComponentName } from "./src/component-name";

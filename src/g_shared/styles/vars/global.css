@@ -1,7 +1,7 @@
 :root {
     /** Параметры шрифта */
-    --font-family-main: "Segoe UI", roboto, helvetica, ubuntu, cantarell, arial,
-        sans-serif;
+    --font-family-main: "Segoe UI", "Roboto", "Helvetica", "Ubuntu", "Cantarell",
+        arial, sans-serif;
     --font-size-m: 16px;
     --font-line-m: 24px;
     --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
@@ -31,4 +31,9 @@
     --gap-68: 68px;
     --gap-72: 72px;
     --gap-80: 80px;
+
+    /** Общие цвета */
+    --common-blue: #428fdc;
+    --common-yellow: #f1e05a;
+    --common-green: #2da160;
 }

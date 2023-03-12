@@ -5,8 +5,8 @@ import {
 } from "@shared/configs/theme-config";
 import { useCallback, useContext } from "react";
 
+import type { TTheme } from "../models";
 import { ThemeContext } from "../theme-context";
-import type { TTheme, TThemeContextProps } from "../models";
 
 type TUseTheme = {
     theme?: TTheme;
@@ -14,7 +14,7 @@ type TUseTheme = {
 };
 
 export const useTheme = (): TUseTheme => {
-    const { setTheme, theme } = useContext(ThemeContext) as TThemeContextProps;
+    const { setTheme, theme } = useContext(ThemeContext);
 
     const toggleTheme = useCallback(() => {
         const newTheme = theme === DARK ? LIGHT : DARK;

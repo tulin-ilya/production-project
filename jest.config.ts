@@ -17,19 +17,15 @@ export default {
         // "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
         //     "<rootDir>/__mocks__/fileMock.js",
         "\\.s?css$": "identity-obj-proxy",
-        "\\.svg": path.resolve(
-            __dirname,
-            "src",
-            "config",
-            "jest",
-            "jest-empty.tsx"
-        ),
+        "\\.svg": path.resolve("config", "jest", "jest-empty.tsx"),
         "@app/(.*)": "<rootDir/src/a_app/$1",
         "@processes/(.*)": "<rootDir>/src/b_processes/$1",
         "@pages/*": "<rootDir/src/c_pages/$1",
         "@widgets/(.*)": "<rootDir>/src/d_widgets/$1",
         "@features/(.*)": "<rootDir/src/e_features/$1",
         "@shared/(.*)": "<rootDir>/src/g_shared/$1",
+        "@config/(.*)": "<rootDir>/config/$1",
+        "@tools/(.*)": "<rootDir>/tools/$1",
     },
     // The glob patterns Jest uses to detect test files
     // testMatch: [

@@ -1,4 +1,4 @@
-import { renderWithTranslation } from "@shared/lib/tests/render-with-translations";
+import { renderWithTranslation } from "@config/jest/render-with-translations";
 import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
