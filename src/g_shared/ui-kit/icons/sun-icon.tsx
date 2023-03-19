@@ -1,10 +1,10 @@
 import cn from "classnames";
 import { memo } from "react";
 
-import { TiconProps } from "./models";
-import styles from "./styles.module.scss";
+import { TIconProps } from "./models";
+import styles from "./styles/styles.module.scss";
 
-export const SunIcon = memo(({ view, className }: TiconProps) => (
+export const SunIcon = memo(({ className }: TIconProps) => (
     <svg
         width="24"
         height="24"
