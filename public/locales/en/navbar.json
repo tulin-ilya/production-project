@@ -1,4 +1,4 @@
 {
-  "home": "home",
-  "about": "about"
+    "sign-in": "sign-in",
+    "sign-out": "sign-out"
 }

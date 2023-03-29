@@ -3,6 +3,12 @@
 @import "@shared/styles/themes/light.css";
 @import "./reset.css";
 
+body {
+    background: var(--bg-primary);
+    color: var(--color-primary);
+    font: var(--font-m);
+}
+
 .app {
     display: flex;
     min-height: 100vh;

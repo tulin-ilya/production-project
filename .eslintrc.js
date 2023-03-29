@@ -1,10 +1,17 @@
+// eslint-disable-next-line no-undef
 module.exports = {
+    settings: {
+        react: {
+            version: "detect",
+        },
+    },
     env: {
         browser: true,
         es2021: true,
         jest: true,
     },
     extends: [
+        "eslint:recommended",
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:i18next/recommended",
@@ -18,9 +25,16 @@ module.exports = {
         ecmaVersion: "latest",
         sourceType: "module",
     },
-    plugins: ["react", "@typescript-eslint", "simple-import-sort", "i18next"],
+    plugins: [
+        "react",
+        "@typescript-eslint",
+        "simple-import-sort",
+        "i18next",
+        "react-hooks",
+    ],
     rules: {
-        indent: [2, 4],
+        "@typescript-eslint/ban-ts-comment": "warn",
+        "@typescript-eslint/ban-types": "warn",
         "i18next/no-literal-string": [
             "error",
             {
@@ -31,6 +45,7 @@ module.exports = {
         "import/prefer-default-export": "off",
         "import/extensions": "off",
         "import/no-extraneous-dependencies": "off",
+        indent: [2, 4],
         "no-unused-vars": "warn",
         "no-shadow": "off",
         "no-underscore-dangle": "off",
@@ -47,12 +62,13 @@ module.exports = {
                 extensions: [".js", ".jsx", ".tsx"],
             },
         ],
+        "react-hooks/rules-of-hooks": "warn",
+        "react-hooks/exhaustive-deps": "warn",
         "simple-import-sort/imports": "error",
-        "@typescript-eslint/ban-ts-comment": "warn",
     },
     overrides: [
         {
-            files: ["*.test.{tsx,ts}"],
+            files: ["*.{test,stories}.{tsx,ts}"],
             rules: {
                 "i18next/no-literal-string": "off",
             },
