@@ -34,5 +34,5 @@ jobs:
         run: yarn storybook:build
         if: always()
       - name: screenshot testing
-        run: yarn test-ui
+        run: yarn test-ui-ci
         if: always()
