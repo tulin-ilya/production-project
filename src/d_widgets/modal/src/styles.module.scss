@@ -15,7 +15,7 @@
     pointer-events: all;
 
     & .content {
-        transform: scale(1);
+        transform: scaleY(1);
     }
 }
 
@@ -35,12 +35,12 @@
     border: 1px solid var(--bg-inverted-secondary);
     border-radius: var(--gap-12);
     background: var(--bg-primary);
-    transform: scale(0.5);
+    transform: scaleY(0.1);
     transition: transform 0.3s;
 }
 
 .is-closing {
     & .content {
-        transform: scale(0.3);
+        transform: scaleY(0.1);
     }
 }

@@ -1,8 +1,8 @@
 import cn from "classnames";
-import type { MouseEvent, PropsWithChildren } from "react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import type { PropsWithChildren } from "react";
 import { memo } from "react";
 
+import { useModal } from "./hooks/use-modal";
 import { TModalProps } from "./models";
 import styles from "./styles.module.scss";
 
@@ -13,41 +13,10 @@ export const Modal = memo(
         isOpen,
         onClose,
     }: PropsWithChildren<TModalProps>) => {
-        const [isClosing, setIsClosing] = useState(false);
-        const timerRef = useRef<ReturnType<typeof setTimeout>>();
-
-        const closeHandler = useCallback(() => {
-            if (onClose) {
-                setIsClosing(true);
-                timerRef.current = setTimeout(() => {
-                    onClose();
-                    setIsClosing(false);
-                }, 300);
-            }
-        }, [onClose, setIsClosing, timerRef]);
-
-        const onContentClick = useCallback((event: MouseEvent) => {
-            event.stopPropagation();
-        }, []);
-
-        const onKeyDown = useCallback(
-            (event: globalThis.KeyboardEvent) => {
-                if (event.key === "Escape") {
-                    closeHandler();
-                }
-            },
-            [closeHandler]
-        );
-
-        useEffect(() => {
-            return () => {
-                if (isOpen) {
-                    window.addEventListener("keydown", onKeyDown);
-                }
-                clearTimeout(timerRef.current);
-                window.removeEventListener("keydown", onKeyDown);
-            };
-        }, [onKeyDown, isOpen]);
+        const { closeHandler, isClosing, onContentClick } = useModal({
+            onClose,
+            isOpen,
+        });
 
         return (
             <div

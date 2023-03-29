@@ -1,9 +1,11 @@
-import cn from "classnames";
-import { memo } from "react";
+import type { PropsWithChildren } from "react";
+import { createPortal } from "react-dom";
 
-import { TPortalProps } from "./models";
-import styles from "./styles.module.css";
+import type { TPortalProps } from "./models";
 
-export const Portal = memo(({ className }: TPortalProps) => {
-    return <div className={cn(styles["portal"], className)}></div>;
-});
+export const Portal = ({
+    children,
+    container = document.body,
+}: PropsWithChildren<TPortalProps>) => {
+    return createPortal(children, container);
+};

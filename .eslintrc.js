@@ -34,6 +34,7 @@ module.exports = {
     ],
     rules: {
         "@typescript-eslint/ban-ts-comment": "warn",
+        "@typescript-eslint/ban-types": "warn",
         "i18next/no-literal-string": [
             "error",
             {
@@ -67,7 +68,7 @@ module.exports = {
     },
     overrides: [
         {
-            files: ["*.test.{tsx,ts}"],
+            files: ["*.{test,stories}.{tsx,ts}"],
             rules: {
                 "i18next/no-literal-string": "off",
             },
