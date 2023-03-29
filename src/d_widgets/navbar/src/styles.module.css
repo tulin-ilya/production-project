@@ -1,0 +1,30 @@
+.navbar {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--gap-12) var(--gap-20);
+    border-bottom: solid 1px var(--color-secondary);
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-12);
+}
+
+.primary {
+    background: var(--bg-primary);
+}
+
+.secondary {
+    background: var(--bg-secondary);
+}
+
+.inverted-primary {
+    background: var(--bg-inverted-primary);
+}
+
+.inverted-secondary {
+    background: var(--bg-inverted-secondary);
+}

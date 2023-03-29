@@ -10,27 +10,21 @@ export const createFn = (
 ) => {
     fs.mkdirSync(newComponentPath);
 
-    let currentTemplatePath = templatePath;
-    let currentComponentPath = newComponentPath;
-
-    const files = fs.readdirSync(currentTemplatePath);
+    const files = fs.readdirSync(templatePath);
     files.forEach((item) => {
         try {
-            let data = fs.readFileSync(
-                `${currentTemplatePath}/${item}`,
-                "utf-8"
-            );
+            const data = fs.readFileSync(`${templatePath}/${item}`, "utf-8");
             if (item.includes("component-name")) {
                 item = item.replace("component-name", componentName);
             }
             fs.writeFileSync(
-                `${currentComponentPath}/${item}`,
+                `${newComponentPath}/${item}`,
                 formatData(data, componentName, baseType)
             );
         } catch (e) {
             createFn(
-                `${currentTemplatePath}/${item}`,
-                `${currentComponentPath}/${item}`,
+                `${templatePath}/${item}`,
+                `${newComponentPath}/${item}`,
                 componentName,
                 baseType
             );

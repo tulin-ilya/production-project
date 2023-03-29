@@ -1,0 +1,18 @@
+stages:
+  - test
+
+test:
+  image: node:latest
+  stage: test
+  before_script:
+    - yarn
+  script:
+    - yarn test -- --testResultsProcessor=\"jest-junit\" --watchAll=false --ci --coverage
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  artifacts:
+    paths:
+      - coverage/
+    when: always
+    reports:
+      junit:
+        - junit.xml

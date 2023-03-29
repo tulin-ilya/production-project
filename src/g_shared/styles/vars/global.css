@@ -1,17 +1,15 @@
 :root {
-    /* Параметры шрифта */
-    --font-family-main: "Segoe UI", Roboto, Helvetica, Ubuntu, Cantarell, Arial,
-        sans-serif;
-
+    /** Параметры шрифта */
+    --font-family-main: "Segoe UI", "Roboto", "Helvetica", "Ubuntu", "Cantarell",
+        arial, sans-serif;
     --font-size-m: 16px;
     --font-line-m: 24px;
     --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
-
     --font-size-l: 24px;
     --font-line-l: 32px;
     --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
 
-    /* Отступы */
+    /** Отступы */
     --gap-0: 0;
     --gap-2: 2px;
     --gap-4: 4px;
@@ -33,4 +31,12 @@
     --gap-68: 68px;
     --gap-72: 72px;
     --gap-80: 80px;
+
+    /** Общие цвета */
+    --common-blue: #428fdc;
+    --common-yellow: #f1e05a;
+    --common-green: #2da160;
+
+    /** Z-индексы */
+    --z-10: 10;
 }

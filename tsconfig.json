@@ -2,7 +2,7 @@
     "compilerOptions": {
         "outDir": "./dist/",
         "noImplicitAny": true,
-        "module": "ESNext",
+        "module": "esnext",
         "target": "es5",
         "jsx": "react-jsx",
         "lib": ["ESNext", "DOM"],
@@ -17,12 +17,15 @@
             "@pages/*": ["./src/c_pages/*"],
             "@widgets/*": ["./src/d_widgets/*"],
             "@features/*": ["./src/e_features/*"],
-            "@shared/*": ["./src/g_shared/*"]
+            "@shared/*": ["./src/g_shared/*"],
+            "@config/*": ["./config/*"],
+            "@tools/*": ["./tools/*"]
         }
     },
     "ts-node": {
         "compilerOptions": {
             "module": "CommonJS"
         }
-    }
+    },
+    "include": ["./", ".storybook"]
 }

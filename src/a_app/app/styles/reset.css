@@ -1,0 +1,15 @@
+@import "@shared/styles/vars/global.css";
+
+* {
+    box-sizing: border-box;
+    padding: var(--gap-0);
+    margin: var(--gap-0);
+}
+
+input,
+button,
+textarea,
+select {
+    margin: var(--gap-0);
+    font: inherit;
+}

@@ -1,6 +1,6 @@
 export const paths: Record<string, string> = {
     widget: "d_widgets",
-    component: "g_shared/ui-components",
+    component: "g_shared/ui-kit",
 };
 
 export const prompts = [

@@ -1,16 +1,15 @@
-import { useCallback, useContext } from "react";
-
 import {
     DARK,
     LIGHT,
     LOCAL_STORAGE_THEME_KEY,
 } from "@shared/configs/theme-config";
+import { useCallback, useContext } from "react";
 
-import { TTheme } from "../models";
-import { ThemeContext } from "../components/theme-context";
+import type { TTheme } from "../models";
+import { ThemeContext } from "../theme-context";
 
 type TUseTheme = {
-    theme: TTheme;
+    theme?: TTheme;
     toggleTheme: () => void;
 };
 
@@ -19,6 +18,8 @@ export const useTheme = (): TUseTheme => {
 
     const toggleTheme = useCallback(() => {
         const newTheme = theme === DARK ? LIGHT : DARK;
+        // TODO
+        // @ts-ignore
         setTheme(newTheme);
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
     }, [theme, setTheme]);

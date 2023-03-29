@@ -1,6 +1,7 @@
 import HTMLWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import webpack from "webpack";
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 import { TBuildOptions } from "./typings";
 
@@ -19,4 +20,6 @@ export const buildPlugins = ({
     new webpack.DefinePlugin({
         __IS_DEV: JSON.stringify(isDev),
     }),
+    new webpack.HotModuleReplacementPlugin(),
+    new BundleAnalyzerPlugin(),
 ];

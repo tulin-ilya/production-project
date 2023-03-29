@@ -1,17 +1,15 @@
 import {
     CLEAR,
-    INVERTED_PRIMARY,
-    INVERTED_SECONDARY,
+    NORMAL,
     PRIMARY,
     SECONDARY,
 } from "@shared/configs/components-view";
 
 export type TView =
     | typeof CLEAR
+    | typeof NORMAL
     | typeof PRIMARY
-    | typeof SECONDARY
-    | typeof INVERTED_PRIMARY
-    | typeof INVERTED_SECONDARY;
+    | typeof SECONDARY;
 
 export type TComponentBaseProps = {
     /** Для margin и padding */

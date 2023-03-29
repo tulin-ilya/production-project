@@ -1,1 +1,1 @@
-export { LangSwitcher } from "./components/lang-switcher";
+export { LangSwitcher } from "./src/lang-switcher";
