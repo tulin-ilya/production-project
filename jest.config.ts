@@ -23,6 +23,7 @@ export default {
         "@pages/*": "<rootDir/src/c_pages/$1",
         "@widgets/(.*)": "<rootDir>/src/d_widgets/$1",
         "@features/(.*)": "<rootDir/src/e_features/$1",
+        "@entities/(.*)": "<rootDir/src/f_entities/$1",
         "@shared/(.*)": "<rootDir>/src/g_shared/$1",
         "@config/(.*)": "<rootDir>/config/$1",
         "@tools/(.*)": "<rootDir>/tools/$1",

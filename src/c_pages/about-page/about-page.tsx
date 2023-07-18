@@ -1,3 +1,4 @@
+import { Counter } from "@entities/counter";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -8,7 +9,12 @@ const AboutPage = () => {
         // throw new Error();
     }, []);
 
-    return <div>{t("about page")}</div>;
+    return (
+        <div>
+            {t("about page")}
+            <Counter />
+        </div>
+    );
 };
 
 export default AboutPage;

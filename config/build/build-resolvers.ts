@@ -21,6 +21,7 @@ export const buildResolvers = (
             "@pages": `${src}/c_pages`,
             "@widgets": `${src}/d_widgets`,
             "@features": `${src}/e_features`,
+            "@entities": `${src}/f_entities`,
             "@shared": `${src}/g_shared`,
             "@config": `${path.resolve("config")}`,
             "@tools": `${path.resolve("tools")}`,

@@ -1,9 +1,7 @@
-export type TCounterState = {
-    value: number;
-};
+import type { TCounterState } from "@entities/counter";
 
 export type TStateSchema = {
-    // counter: TCounterState;
+    counter: TCounterState;
 };
 
 export type TStoreProviderProps = {
