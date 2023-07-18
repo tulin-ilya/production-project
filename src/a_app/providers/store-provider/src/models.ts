@@ -1,4 +1,5 @@
 import type { TCounterState } from "@entities/counter";
+import { DeepPartial } from "@reduxjs/toolkit";
 
 export type TStateSchema = {
     counter: TCounterState;
@@ -6,5 +7,5 @@ export type TStateSchema = {
 
 export type TStoreProviderProps = {
     children?: React.ReactNode;
-    initialState?: TStateSchema;
+    initialState?: DeepPartial<TStateSchema>;
 };

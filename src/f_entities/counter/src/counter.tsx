@@ -1,28 +1,23 @@
-/* eslint-disable i18next/no-literal-string */
-import type { TStateSchema } from "@app/providers/store-provider";
 import { Button } from "@shared/ui-kit/button";
 import { memo } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
-import { counterActions } from "./store/counter-slice";
-import { getCounterValue } from "./store/selectors";
+import { useCounter } from "./hooks/use-counter";
 
 export const Counter = memo(() => {
-    const dispatch = useDispatch();
-    const counterValue = useSelector(getCounterValue);
+    const { counterValue, increment, decrement } = useCounter();
 
-    const increment = () => {
-        dispatch(counterActions.increment());
-    };
-    const decrement = () => {
-        dispatch(counterActions.decrement());
-    };
+    const { t } = useTranslation("counter");
 
     return (
         <div>
-            <h1>{counterValue}</h1>
-            <Button onClick={increment}>increment</Button>
-            <Button onClick={decrement}>decrement</Button>
+            <h1 data-testid={"counterValue"}>{counterValue}</h1>
+            <Button data-testid={"increment"} onClick={increment}>
+                {t("increment")}
+            </Button>
+            <Button data-testid={"decrement"} onClick={decrement}>
+                {t("decrement")}
+            </Button>
         </div>
     );
 });
