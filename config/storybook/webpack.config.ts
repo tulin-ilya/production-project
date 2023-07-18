@@ -13,6 +13,7 @@ module.exports = ({ config }: { config: webpack.Configuration }) => {
         "@pages": `${srcPath}/c_pages`,
         "@widgets": `${srcPath}/d_widgets`,
         "@features": `${srcPath}/e_features`,
+        "@entities": `${srcPath}/f_entities`,
         "@shared": `${srcPath}/g_shared`,
         "@config": path.resolve("config"),
         "@tools": path.resolve("tools"),
