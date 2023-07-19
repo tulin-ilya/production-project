@@ -6,6 +6,7 @@ import { ANIMATION_DELAY } from "../config";
 type TUseModal = {
     onClose: () => void;
     isOpen: boolean;
+    lazy?: boolean;
 };
 
 export const useModal = ({ onClose, isOpen }: TUseModal) => {
