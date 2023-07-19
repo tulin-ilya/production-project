@@ -1,0 +1,16 @@
+.label {
+    display: flex;
+    flex-direction: column;
+    font: var(--font-s);
+}
+
+.input {
+    display: block;
+    flex-grow: 1;
+    padding: var(--gap-4);
+    border: solid 1px var(--color-inverted-secondary);
+    background: var(--bg-secondary);
+    color: var(--color-primary);
+    font: var(--font-m);
+    outline: none;
+}
