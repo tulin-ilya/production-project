@@ -1,5 +1,6 @@
 export const paths: Record<string, string> = {
     page: "c_pages",
+    feature: "e_features",
     entitie: "f_entities",
     widget: "d_widgets",
     component: "g_shared/ui-kit",

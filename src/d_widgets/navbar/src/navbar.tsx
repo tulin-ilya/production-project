@@ -1,3 +1,4 @@
+import { LoginModal } from "@features/auth-by-username";
 import { Button } from "@shared/ui-kit/button";
 import { Portal } from "@shared/ui-kit/portal";
 import { LangSwitcher } from "@widgets/lang-switcher";
@@ -30,14 +31,7 @@ export const Navbar = memo(
                     <LangSwitcher />
                 </div>
                 <Portal>
-                    {/* eslint-disable-next-line i18next/no-literal-string */}
-                    <Modal isOpen={isAuthOpen} onClose={onToggleAuth}>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Aperiam quis ex aliquam, corrupti et nemo ipsum,
-                        ut dicta omnis, tempore voluptatibus veniam. Quia
-                        repellendus expedita tempore asperiores atque accusamus
-                        laudantium.
-                    </Modal>
+                    <LoginModal isOpen={isAuthOpen} onClose={onToggleAuth} />
                 </Portal>
             </div>
         );
