@@ -12,11 +12,17 @@ export const Modal = memo(
         children,
         isOpen,
         onClose,
+        lazy,
     }: PropsWithChildren<TModalProps>) => {
         const { closeHandler, isClosing, onContentClick } = useModal({
             onClose,
             isOpen,
+            lazy,
         });
+
+        if (lazy && !isOpen) {
+            return null;
+        }
 
         return (
             <div

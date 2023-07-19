@@ -4,7 +4,7 @@ import { ComponentName as ComponentNameComponent } from "../index";
 import { ARGS, ARGS_TYPES } from "./config";
 
 export default {
-    title: "UI-kit/Button",
+    title: "ComponentName",
     component: ComponentNameComponent,
     args: ARGS,
     argTypes: ARGS_TYPES,
