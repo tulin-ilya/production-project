@@ -1,6 +1,6 @@
-import { TComponentBaseProps } from "@shared/configs/component-base-type";
+import { TEntitieBaseProps } from "@shared/configs/entitie-base-type";
 
-export type TLoginModalProps = TComponentBaseProps & {
+export type TLoginModalProps = TEntitieBaseProps & {
     /** Открыто ли модальное окно */
     isOpen: boolean;
     /** Обработчик во время закрытия модального окна */

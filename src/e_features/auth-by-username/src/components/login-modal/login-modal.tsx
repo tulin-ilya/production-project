@@ -9,7 +9,12 @@ import styles from "./styles.module.css";
 export const LoginModal = memo(
     ({ isOpen, className, onClose }: TLoginModalProps) => {
         return (
-            <Modal className={cn(className)} isOpen={isOpen} onClose={onClose}>
+            <Modal
+                lazy
+                className={cn(className)}
+                isOpen={isOpen}
+                onClose={onClose}
+            >
                 <LoginForm />
             </Modal>
         );

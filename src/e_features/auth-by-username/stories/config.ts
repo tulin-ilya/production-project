@@ -1,6 +1,7 @@
-/* eslint-disable indent */
-// import { TAuthByUsernameProps } from "../src/models";
+import { TLoginModalProps } from "../src/components/login-modal/models";
 
-// export const ARGS: TAuthByUsernameProps = {};
+export const ARGS: TLoginModalProps = {
+    isOpen: true,
+};
 
 export const ARGS_TYPES = {};
