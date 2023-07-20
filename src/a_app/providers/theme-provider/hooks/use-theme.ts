@@ -18,9 +18,8 @@ export const useTheme = (): TUseTheme => {
 
     const toggleTheme = useCallback(() => {
         const newTheme = theme === DARK ? LIGHT : DARK;
-        // TODO
-        // @ts-ignore
-        setTheme(newTheme);
+        setTheme?.(newTheme);
+        document.body.className = newTheme;
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
     }, [theme, setTheme]);
 

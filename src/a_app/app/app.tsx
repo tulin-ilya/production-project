@@ -7,13 +7,9 @@ import { Sidebar } from "@widgets/sidebar";
 import cn from "classnames";
 import { Suspense } from "react";
 
-import { useApp } from "./hooks/use-app";
-
 const AppCompoenent = () => {
-    const { theme } = useApp();
-
     return (
-        <div className={customCN("app", {}, [theme])}>
+        <div className={customCN("app", {}, [])}>
             <Suspense fallback="">
                 <Navbar />
                 <div className={cn("content-page")}>
