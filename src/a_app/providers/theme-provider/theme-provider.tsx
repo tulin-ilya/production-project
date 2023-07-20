@@ -1,5 +1,5 @@
 import { LIGHT, LOCAL_STORAGE_THEME_KEY } from "@shared/configs/theme-config";
-import { ReactNode, useMemo, useState } from "react";
+import { ReactNode, useEffect, useMemo, useState } from "react";
 
 import type { TTheme } from "./models";
 import { ThemeContext } from "./theme-context";
@@ -17,6 +17,10 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
         }),
         [theme]
     );
+
+    useEffect(() => {
+        document.body.className = theme;
+    }, []);
 
     return (
         <ThemeContext.Provider value={defaultValue}>
