@@ -4,7 +4,6 @@ import { memo } from "react";
 
 import { LoginForm } from "../login-form/login-form";
 import { TLoginModalProps } from "./models";
-import styles from "./styles.module.css";
 
 export const LoginModal = memo(
     ({ isOpen, className, onClose }: TLoginModalProps) => {
