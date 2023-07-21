@@ -2,7 +2,6 @@ import { LoginModal } from "@features/auth-by-username";
 import { Button } from "@shared/ui-kit/button";
 import { Portal } from "@shared/ui-kit/portal";
 import { LangSwitcher } from "@widgets/lang-switcher";
-import { Modal } from "@widgets/modal";
 import { ThemeSwitcher } from "@widgets/theme-switcher";
 import cn from "classnames";
 import { memo, useCallback, useState } from "react";

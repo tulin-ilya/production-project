@@ -1,7 +1,7 @@
 import { Button } from "@shared/ui-kit/button";
 import { Input } from "@shared/ui-kit/input";
 import cn from "classnames";
-import { memo, useCallback, useState } from "react";
+import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 
