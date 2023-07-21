@@ -28,7 +28,10 @@ export default {
         "@config/(.*)": "<rootDir>/config/$1",
         "@tools/(.*)": "<rootDir>/tools/$1",
     },
-    globals: { __IS_DEV: true },
+    globals: {
+        __IS_DEV: true,
+    },
+    transformIgnorePatterns: ["//node_modules"],
     // The glob patterns Jest uses to detect test files
     // testMatch: [
     //     "**/__tests__/**/*.[jt]s?(x)",
