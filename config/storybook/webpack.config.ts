@@ -1,5 +1,6 @@
 import path from "path";
 import type webpack from "webpack";
+import { DefinePlugin } from "webpack";
 
 module.exports = ({ config }: { config: webpack.Configuration }) => {
     const srcPath = path.resolve("./src");
@@ -18,6 +19,12 @@ module.exports = ({ config }: { config: webpack.Configuration }) => {
         "@config": path.resolve("config"),
         "@tools": path.resolve("tools"),
     };
+
+    config.plugins.push(
+        new DefinePlugin({
+            __IS_DEV: true,
+        })
+    );
 
     return config;
 };
