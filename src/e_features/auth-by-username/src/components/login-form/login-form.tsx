@@ -36,12 +36,12 @@ export const LoginForm = memo(() => {
         <div className={cn(styles["login-form-wrapper"])}>
             <Input
                 onChange={onChangeUsername}
-                label="username"
+                label={t("username")}
                 value={username}
             />
             <Input
                 onChange={onChangePassword}
-                label="password"
+                label={t("password")}
                 value={password}
             />
             <Button
