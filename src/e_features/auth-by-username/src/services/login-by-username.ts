@@ -1,4 +1,3 @@
-import i18n from "@config/i18n";
 import { TUser, userActions } from "@entities/user";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { USER_LOCAL_STORAGE_KEY } from "@shared/consts/local-storege";
@@ -35,8 +34,6 @@ export const loginByUsername = createAsyncThunk<
     } catch (e) {
         console.log(e);
 
-        return thunkAPI.rejectWithValue(
-            i18n.t("incorrect username or password")
-        );
+        return thunkAPI.rejectWithValue("error");
     }
 });

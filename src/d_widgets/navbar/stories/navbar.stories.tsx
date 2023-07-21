@@ -1,4 +1,5 @@
 import { ThemeProvider } from "@app/providers/theme-provider";
+import { StoreDecorator } from "@config/storybook/decorators/store-decorator";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Navbar as NavbarComponent } from "../index";
@@ -9,6 +10,7 @@ export default {
     component: NavbarComponent,
     args: ARGS,
     argTypes: ARGS_TYPES,
+    decorators: [StoreDecorator({ login: {} })],
 } as ComponentMeta<typeof NavbarComponent>;
 
 const Template: ComponentStory<typeof NavbarComponent> = (args) => (

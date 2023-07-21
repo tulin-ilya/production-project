@@ -38,7 +38,9 @@ export const LoginForm = memo(() => {
     return (
         <div className={cn(styles["login-form-wrapper"])}>
             <Text Tag="h3">{t("authorization")}</Text>
-            {!!error && <Text view="danger">{error}</Text>}
+            {!!error && (
+                <Text view="danger">{t("incorrect username or password")}</Text>
+            )}
             <Input
                 onChange={onChangeUsername}
                 label={t("username")}
