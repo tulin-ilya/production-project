@@ -14,7 +14,7 @@ export default {
 } as ComponentMeta<typeof ModalComponent>;
 
 const Template: ComponentStory<typeof ModalComponent> = (args) => {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(args.isOpen);
     return (
         <>
             <Button onClick={() => setIsOpen(true)}>open modal</Button>

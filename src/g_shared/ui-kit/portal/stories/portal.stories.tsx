@@ -14,7 +14,7 @@ export default {
 } as ComponentMeta<typeof PortalComponent>;
 
 const Template: ComponentStory<typeof PortalComponent> = (args) => {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
 
     return (
         <>

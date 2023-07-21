@@ -20,6 +20,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
     useEffect(() => {
         document.body.className = theme;
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

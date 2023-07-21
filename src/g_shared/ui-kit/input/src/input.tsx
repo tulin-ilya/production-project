@@ -1,9 +1,10 @@
+import { Text } from "@shared/ui-kit/text";
 import cn from "classnames";
 import type { ChangeEvent } from "react";
 import { memo, useEffect, useRef } from "react";
 
 import type { TInputProps } from "./models";
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 
 export const Input = memo(
     ({
@@ -13,6 +14,7 @@ export const Input = memo(
         value,
         type = "text",
         label,
+        view = "normal",
         ...props
     }: TInputProps) => {
         const inputRef = useRef<HTMLInputElement>(null);
@@ -28,17 +30,21 @@ export const Input = memo(
         }, [autofocus]);
 
         return (
-            <label className={cn(styles.label, className)}>
+            <Text
+                Tag="label"
+                view={view}
+                className={cn(styles.label, className)}
+            >
                 {label}
                 <input
                     {...props}
                     ref={inputRef}
                     type={type}
-                    className={cn(styles["input"])}
+                    className={cn(styles["input"], styles[view])}
                     onChange={onChangeHandler}
                     value={value}
                 ></input>
-            </label>
+            </Text>
         );
     }
 );

@@ -1,3 +1,4 @@
+import { StoreDecorator } from "@config/storybook/decorators/store-decorator";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { LoginModal as LoginModalComponent } from "../index";
@@ -8,6 +9,7 @@ export default {
     component: LoginModalComponent,
     args: ARGS,
     argTypes: ARGS_TYPES,
+    decorators: [StoreDecorator({ login: {} })],
 } as ComponentMeta<typeof LoginModalComponent>;
 
 const Template: ComponentStory<typeof LoginModalComponent> = (args) => (

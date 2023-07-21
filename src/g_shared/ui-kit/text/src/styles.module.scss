@@ -1,0 +1,22 @@
+.text {
+    &.normal,
+    &.clear {
+        color: var(--color-primary);
+    }
+    &.secondary {
+        color: var(--color-secondary);
+    }
+    &.primary {
+        color: var(--common-blue);
+    }
+    &.warning {
+        color: var(--common-yellow);
+    }
+    &.danger {
+        color: var(--common-red);
+    }
+}
+
+label.text {
+    font: var(--font-s);
+}

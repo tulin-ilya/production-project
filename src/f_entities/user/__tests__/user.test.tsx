@@ -1,6 +1,6 @@
-import { render, screen } from "@testing-library/react";
+// import { render, screen } from "@testing-library/react";
 
-import { User } from "../index";
+// import { User } from "../index";
 
 describe("User", () => {
     it("Test", () => {
