@@ -1,5 +1,6 @@
 import { Button } from "@shared/ui-kit/button";
 import { Input } from "@shared/ui-kit/input";
+import { Text } from "@shared/ui-kit/text";
 import cn from "classnames";
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
@@ -34,15 +35,19 @@ export const LoginForm = memo(() => {
 
     return (
         <div className={cn(styles["login-form-wrapper"])}>
+            <Text Tag="h3">{t("authorization")}</Text>
+            {!!error && <Text view="danger">{error}</Text>}
             <Input
                 onChange={onChangeUsername}
                 label={t("username")}
                 value={username}
+                view={error ? "danger" : "normal"}
             />
             <Input
                 onChange={onChangePassword}
                 label={t("password")}
                 value={password}
+                view={error ? "danger" : "normal"}
             />
             <Button
                 disabled={isLoading}

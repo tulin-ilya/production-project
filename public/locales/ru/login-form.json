@@ -1,5 +1,7 @@
 {
-  "login": "войти",
-  "username": "имя пользователя",
-  "password": "пароль"
+    "login": "войти",
+    "username": "имя пользователя",
+    "password": "пароль",
+    "authorization": "авторизация",
+    "incorrect username or password": "неверный логин или пароль"
 }

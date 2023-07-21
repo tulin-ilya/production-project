@@ -1,3 +1,4 @@
+import i18n from "@config/i18n";
 import { TUser } from "@entities/user";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
@@ -26,6 +27,8 @@ export const loginByUsername = createAsyncThunk<
     } catch (e) {
         console.log(e);
 
-        return thunkAPI.rejectWithValue("error");
+        return thunkAPI.rejectWithValue(
+            i18n.t("incorrect username or password")
+        );
     }
 });
