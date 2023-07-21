@@ -31,6 +31,8 @@ export const LoginForm = memo(() => {
 
     const onLoginClick = useCallback(() => {
         dispatch(loginByUsername({ password, username }));
+        dispatch(loginActions.setUsername(""));
+        dispatch(loginActions.setPassword(""));
     }, [dispatch, password, username]);
 
     return (
