@@ -20,7 +20,7 @@
         "storybook:build": "build-storybook -c ./config/storybook",
         "test": "jest",
         "test-unit": "jest --config ./jest.config.ts",
-        "test-ui": "npx loki test",
+        "test-ui": "npx loki test --reactUri file:./storybook-static",
         "test-ui-ci": "loki --requireReference --reactUri file:./storybook-static",
         "test-ui-approve": "npx loki approve"
     },
