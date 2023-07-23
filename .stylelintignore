@@ -1,3 +1,4 @@
 build
+storybook-static
 node_modules
 tools/create-component/template/*

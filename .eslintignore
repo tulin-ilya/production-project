@@ -1,4 +1,5 @@
 build
+storybook-static
 node_modules
 *.d.ts
 tools/create-component/template/*
