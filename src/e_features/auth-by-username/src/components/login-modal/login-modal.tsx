@@ -1,8 +1,9 @@
+import { Spinner } from "@shared/ui-kit/spinner";
 import { Modal } from "@widgets/modal";
 import cn from "classnames";
-import { memo } from "react";
+import { memo, Suspense } from "react";
 
-import { LoginForm } from "../login-form/login-form";
+import { LoginFormLazy as LoginForm } from "../login-form/login-form.lazy";
 import { TLoginModalProps } from "./models";
 
 export const LoginModal = memo(
@@ -14,7 +15,9 @@ export const LoginModal = memo(
                 isOpen={isOpen}
                 onClose={onClose}
             >
-                <LoginForm />
+                <Suspense fallback={<Spinner />}>
+                    <LoginForm />
+                </Suspense>
             </Modal>
         );
     }
