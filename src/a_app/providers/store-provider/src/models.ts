@@ -11,6 +11,8 @@ import type {
     ReducersMapObject,
 } from "@reduxjs/toolkit";
 
+import { createReduxStore } from "./create-redux-store";
+
 export type TStateSchema = {
     counter: TCounterState;
     user: TUserState;
@@ -39,3 +41,5 @@ export type TReducerManager = {
 export type TReduxStoreWithManager = EnhancedStore<TStateSchema> & {
     reducerManager: TReducerManager;
 };
+
+export type TAppDispatch = ReturnType<typeof createReduxStore>["dispatch"];

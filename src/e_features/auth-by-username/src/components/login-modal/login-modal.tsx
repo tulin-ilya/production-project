@@ -16,7 +16,7 @@ export const LoginModal = memo(
                 onClose={onClose}
             >
                 <Suspense fallback={<Spinner />}>
-                    <LoginForm />
+                    <LoginForm onSuccess={onClose} />
                 </Suspense>
             </Modal>
         );

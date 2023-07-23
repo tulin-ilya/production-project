@@ -1,3 +1,4 @@
+import { TAppDispatch } from "@app/providers/store-provider";
 import { Button } from "@shared/ui-kit/button";
 import {
     DynamicModuleLoader,
@@ -13,11 +14,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { loginByUsername } from "../../services/login-by-username";
 import { loginActions, loginReducer } from "../../store/login-slice";
 import { getLoginState } from "../../store/selectors";
+import { TLoginFormProps } from "./models";
 import styles from "./styles.module.scss";
 
-const LoginForm = memo(() => {
+const LoginForm = memo(({ onSuccess }: TLoginFormProps) => {
     const { t } = useTranslation("login-form");
-    const dispatch = useDispatch();
+    const dispatch = useDispatch<TAppDispatch>();
     const { isLoading, password, username, error } = useSelector(getLoginState);
 
     const initialReducers: TReducersList = useMemo(
@@ -40,11 +42,14 @@ const LoginForm = memo(() => {
         [dispatch]
     );
 
-    const onLoginClick = useCallback(() => {
-        dispatch(loginByUsername({ password, username }));
+    const onLoginClickHandler = useCallback(async () => {
+        const result = await dispatch(loginByUsername({ password, username }));
         dispatch(loginActions.setUsername(""));
         dispatch(loginActions.setPassword(""));
-    }, [dispatch, password, username]);
+        if (result.meta.requestStatus === "fulfilled") {
+            onSuccess?.();
+        }
+    }, [dispatch, onSuccess, password, username]);
 
     return (
         <DynamicModuleLoader
@@ -72,7 +77,7 @@ const LoginForm = memo(() => {
                 />
                 <Button
                     disabled={isLoading}
-                    onClick={onLoginClick}
+                    onClick={onLoginClickHandler}
                     className={cn(styles.button)}
                 >
                     {t("login")}
