@@ -1,5 +1,5 @@
 /* eslint-disable indent */
-import { TSidebarProps } from "../src/models";
+import { TSidebarProps } from "../src/components/sidebar/models";
 
 export const ARGS: TSidebarProps = {};
 
