@@ -1,14 +1,13 @@
-import { AppLink } from "@shared/ui-kit/app-link";
 import { Button } from "@shared/ui-kit/button";
-import { AboutIcon } from "@shared/ui-kit/icons/about-icon";
 import { ArrowIcon } from "@shared/ui-kit/icons/arrow-icon";
-import { HomeIcon } from "@shared/ui-kit/icons/home-icon";
 import cn from "classnames";
-import { memo } from "react";
+import { memo, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { useSidebar } from "./hooks/use-sidebar";
-import { TSidebarProps } from "./models";
+import { useSidebar } from "../../hooks/use-sidebar";
+import { SidebarLink } from "../sidebar-link/sidebar-link";
+import { sidebarLinksList } from "./config";
+import type { TSidebarProps } from "./models";
 import styles from "./styles.module.scss";
 
 export const Sidebar = memo(
@@ -27,14 +26,15 @@ export const Sidebar = memo(
                 )}
             >
                 <div className={cn(styles["link-container"])}>
-                    <AppLink view="secondary" to="/">
-                        <HomeIcon />
-                        {!collapsed ? t("home") : null}
-                    </AppLink>
-                    <AppLink view="secondary" to="/about">
-                        <AboutIcon />
-                        {!collapsed ? t("about") : null}
-                    </AppLink>
+                    {sidebarLinksList.map((item) => (
+                        <SidebarLink
+                            key={item.label}
+                            label={t(item.label)}
+                            path={item.path}
+                            icon={item.icon}
+                            collapsed={collapsed}
+                        />
+                    ))}
                 </div>
                 <div className={styles["cell-container"]}>
                     <Button
