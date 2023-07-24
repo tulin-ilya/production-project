@@ -25,5 +25,14 @@
             "password": "123"
         }
     ],
-    "profile": { "name": "typicode" }
+    "profile": {
+        "firstname": "Князь",
+        "lastname": "Тьмы",
+        "age": 33,
+        "currency": "RUB",
+        "country": "Russia",
+        "city": "Adler",
+        "username": "admin",
+        "avatar": "https://s460vla.storage.yandex.net/rdisk/acae2810cfec45cfa6a4fd9fbb2e438ad350350beb199ee48547389f6cf2ae99/64bdd185/T9PoAiUvGHr-urdRru0oyO60OyNdM1RhxoZjs8HJ5ZN9ue_YeFZs4i8W9Rdo5NDqyRsPB4J3XQFuziUMJhVEPQ==?uid=0&filename=OIG.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=79586&hid=3b3fdcf22aa8e744d7dddcb546cc9511&media_type=image&tknv=v2&etag=fb237539ee87a7b89c8612c07cba6be1&rtoken=fuQNal2Cb5Tq&force_default=no&ycrid=na-0fdd59b51e5f9be9331b6f0d60a616ec-downloader12e&ts=601316643ab40&s=bac2c9bab4d9fd7b9d309cd9ee6c20fa3fed2ffdaed4c113455232b423adfa1f&pb=U2FsdGVkX1_Tk27a80xYS2Yx6tQToGfFjmAoFauyW2WbX_sYjVEKievY-RHQ8-xAfFl33ss9DOOFTWx0Wu0CmeHzmeFx8qzvU1gszgahRi0"
+    }
 }
