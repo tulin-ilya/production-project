@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import type { TCounterState } from "@entities/counter";
+import { TProfileState } from "@entities/profile";
 import type { TUserState } from "@entities/user";
 import type { TLoginState } from "@features/auth-by-username";
 import type {
@@ -18,6 +19,7 @@ export type TStateSchema = {
     user: TUserState;
     // Асинхронные редьюсеры
     login?: TLoginState;
+    profile?: TProfileState;
 };
 
 export type TStateSchemaKey = keyof TStateSchema;
