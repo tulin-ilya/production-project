@@ -1,38 +1,102 @@
-name: linting, testing, building
+name: pipeline
 on:
   push:
     branches: [master]
   pull_request:
+    types: [opened, edited]
     branches: [master]
+
 jobs:
-  pipeline:
+  install:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [14.x]
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Staring Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: install modules
-        run: yarn install
-      - name: build production project
-        run: yarn build:prod
-        if: always()
-      - name: eslint
-        run: yarn eslint
-        if: always()
-      - name: stylelint
-        run: yarn stylelint
-      - name: tests
-        if: always()
-        run: yarn test
-      # - name: build storybook
-      #   run: yarn storybook:build
-      #   if: always()
-      # - name: screenshot testing
-      #   run: yarn test-ui-ci
-      #   if: always()
+          cache: yarn
+
+      # - name: cache deps
+      #   id: cashe
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: "**/node_modules"
+      #     key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-node-
+      #       ${{ runner.os }}-
+
+      # if: steps.cache.outputs.cache-hit != 'true'
+      - run: yarn
+
+      # - name: Save the cache after installing dependencies
+      #   if: steps.cache.outputs.cache-hit != 'true'
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: ./node_modules
+      #     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
+  quality-check:
+    needs: install
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: yarn
+
+      # - name: cache deps
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: "**/node_modules"
+      #     key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - run: yarn
+
+      - run: yarn eslint
+
+      - run: yarn stylelint
+
+  tests:
+    needs: quality-check
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - name: get repository code
+        uses: actions/checkout@v3
+
+      - name: use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: yarn
+
+      # - name: cache deps
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: "**/node_modules"
+      #     key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - run: yarn
+
+      - run: yarn test
+
+      - run: yarn build:prod
+
+      - run: yarn storybook:build
+
+      - run: yarn test-ui-ci
