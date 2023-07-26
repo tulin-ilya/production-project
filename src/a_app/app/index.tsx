@@ -6,13 +6,13 @@ import { BrowserRouter } from "react-router-dom";
 import AppComponent from "./app";
 
 export const App = () => (
-    <StoreProvider>
-        <ErrorBoundary>
-            <BrowserRouter>
+    <BrowserRouter>
+        <StoreProvider>
+            <ErrorBoundary>
                 <ThemeProvider>
                     <AppComponent />
                 </ThemeProvider>
-            </BrowserRouter>
-        </ErrorBoundary>
-    </StoreProvider>
+            </ErrorBoundary>
+        </StoreProvider>
+    </BrowserRouter>
 );
