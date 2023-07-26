@@ -7,6 +7,7 @@
         "jsx": "react-jsx",
         "lib": ["ESNext", "DOM"],
         "allowJs": true,
+        "strict": true,
         "moduleResolution": "node",
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
