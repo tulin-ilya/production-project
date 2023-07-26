@@ -23,6 +23,7 @@ module.exports = ({ config }: { config: webpack.Configuration }) => {
     config.plugins.push(
         new DefinePlugin({
             __IS_DEV: true,
+            __BASE_API_HOST: JSON.stringify(""),
         })
     );
 

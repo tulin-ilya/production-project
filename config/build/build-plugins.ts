@@ -8,6 +8,7 @@ import { TBuildOptions } from "./typings";
 export const buildPlugins = ({
     paths,
     isDev,
+    baseApiHost,
 }: TBuildOptions): webpack.WebpackPluginInstance[] => {
     const plugins = [
         new HTMLWebpackPlugin({
@@ -20,6 +21,7 @@ export const buildPlugins = ({
         }),
         new webpack.DefinePlugin({
             __IS_DEV: JSON.stringify(isDev),
+            __BASE_API_HOST: JSON.stringify(baseApiHost),
         }),
     ];
 
