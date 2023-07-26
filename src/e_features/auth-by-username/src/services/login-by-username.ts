@@ -4,7 +4,10 @@ import { userActions } from "@entities/user";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { USER_LOCAL_STORAGE_KEY } from "@shared/consts/local-storege";
 
-import type { TLoginByUsername } from "./models";
+type TLoginByUsername = {
+    username: string;
+    password: string;
+};
 
 export const loginByUsername = createAsyncThunk<
     TUser,
