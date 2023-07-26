@@ -1,7 +1,7 @@
 import { Button } from "@shared/ui-kit/button";
 import { ArrowIcon } from "@shared/ui-kit/icons/arrow-icon";
 import cn from "classnames";
-import { memo, useMemo, useState } from "react";
+import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useSidebar } from "../../hooks/use-sidebar";

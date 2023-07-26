@@ -14,6 +14,7 @@ export default (env: TBuildEnv) => {
 
     const mode = env.mode || "development";
     const PORT = env.port || 3000;
+    const baseApiHost = env.baseApiHost || "http://localhost:8000";
 
     const isDev = mode === "development";
 
@@ -22,6 +23,7 @@ export default (env: TBuildEnv) => {
         paths,
         isDev,
         port: PORT,
+        baseApiHost,
     });
 
     return config;

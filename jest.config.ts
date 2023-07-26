@@ -30,6 +30,7 @@ export default {
     },
     globals: {
         __IS_DEV: true,
+        __BASE_API_HOST: "",
     },
     transformIgnorePatterns: ["//node_modules"],
     // The glob patterns Jest uses to detect test files

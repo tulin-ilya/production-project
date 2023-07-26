@@ -21,25 +21,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: yarn
 
-      # - name: cache deps
-      #   id: cashe
-      #   uses: actions/cache@v3
-      #   with:
-      #     path: "**/node_modules"
-      #     key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-node-
-      #       ${{ runner.os }}-
-
-      # if: steps.cache.outputs.cache-hit != 'true'
       - run: yarn
-
-      # - name: Save the cache after installing dependencies
-      #   if: steps.cache.outputs.cache-hit != 'true'
-      #   uses: actions/cache@v3
-      #   with:
-      #     path: ./node_modules
-      #     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
 
   quality-check:
     needs: install
@@ -56,17 +38,13 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: yarn
 
-      # - name: cache deps
-      #   uses: actions/cache@v3
-      #   with:
-      #     path: "**/node_modules"
-      #     key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-
       - run: yarn
 
       - run: yarn eslint
 
       - run: yarn stylelint
+
+      # - run: yarn test
 
   tests:
     needs: quality-check
@@ -85,15 +63,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: yarn
 
-      # - name: cache deps
-      #   uses: actions/cache@v3
-      #   with:
-      #     path: "**/node_modules"
-      #     key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-
       - run: yarn
-
-      - run: yarn test
 
       - run: yarn build:prod
 

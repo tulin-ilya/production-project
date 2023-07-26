@@ -4,4 +4,5 @@ export type {
     TStateSchema,
     TReduxStoreWithManager,
     TAppDispatch,
+    TThunkConfig,
 } from "./src/models";

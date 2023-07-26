@@ -10,6 +10,7 @@ export type TBuildPaths = {
 export type TBuildEnv = {
     mode: TBuildMode;
     port: number;
+    baseApiHost: string;
 };
 
 export type TBuildOptions = {
@@ -17,4 +18,5 @@ export type TBuildOptions = {
     paths: TBuildPaths;
     isDev: boolean;
     port: number;
+    baseApiHost: string;
 };
