@@ -66,10 +66,6 @@ module.exports = {
         "react-hooks/exhaustive-deps": "warn",
         "simple-import-sort/imports": "error",
     },
-    globals: {
-        __IS_DEV: true,
-        __BASE_API_HOST: true,
-    },
     overrides: [
         {
             files: ["*.{test,stories}.{tsx,ts}"],

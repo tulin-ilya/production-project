@@ -44,7 +44,7 @@ jobs:
 
       - run: yarn stylelint
 
-      - run: yarn test
+      # - run: yarn test
 
   tests:
     needs: quality-check
