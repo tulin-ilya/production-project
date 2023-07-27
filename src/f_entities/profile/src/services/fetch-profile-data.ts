@@ -1,5 +1,4 @@
 import type { TThunkConfig } from "@app/providers/store-provider";
-import type { TUser } from "@entities/user";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import type { TProfile } from "../store/models";

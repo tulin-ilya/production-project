@@ -1,8 +1,9 @@
 import { TReduxStoreWithManager } from "@app/providers/store-provider";
+import { TStateSchemaKey } from "@app/providers/store-provider/src/models";
 import { memo, useEffect } from "react";
 import { useDispatch, useStore } from "react-redux";
 
-import { TDynamicModuleLoaderProps, TReducersListEntry } from "./models";
+import { TDynamicModuleLoaderProps } from "./models";
 
 export const DynamicModuleLoader = memo(
     ({
@@ -14,21 +15,17 @@ export const DynamicModuleLoader = memo(
         const store = useStore() as TReduxStoreWithManager;
 
         useEffect(() => {
-            Object.entries(reducers).forEach(
-                ([name, reducer]: TReducersListEntry) => {
-                    store.reducerManager.add(name, reducer);
-                    dispatch({ type: `@INIT ${name} reducer` });
-                }
-            );
+            Object.entries(reducers).forEach(([name, reducer]) => {
+                store.reducerManager.add(name as TStateSchemaKey, reducer);
+                dispatch({ type: `@INIT ${name} reducer` });
+            });
 
             return () => {
                 if (removeReducerAfterUnmount) {
-                    Object.entries(reducers).forEach(
-                        ([name]: TReducersListEntry) => {
-                            store.reducerManager.remove(name);
-                            dispatch({ type: `@DESTROY ${name} reducer` });
-                        }
-                    );
+                    Object.entries(reducers).forEach(([name]) => {
+                        store.reducerManager.remove(name as TStateSchemaKey);
+                        dispatch({ type: `@DESTROY ${name} reducer` });
+                    });
                 }
             };
             // eslint-disable-next-line react-hooks/exhaustive-deps

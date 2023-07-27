@@ -1,23 +1,25 @@
-import type { MouseEvent } from "react";
+import type { MouseEvent, MutableRefObject } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { ANIMATION_DELAY } from "../config";
 
 type TUseModal = {
-    onClose: () => void;
-    isOpen: boolean;
+    onClose?: () => void;
+    isOpen?: boolean;
     lazy?: boolean;
 };
 
 export const useModal = ({ onClose, isOpen }: TUseModal) => {
     const [isClosing, setIsClosing] = useState(false);
-    const timerRef = useRef<ReturnType<typeof setTimeout>>();
+    const timerRef = useRef() as MutableRefObject<
+        ReturnType<typeof setTimeout>
+    >;
 
     const closeHandler = useCallback(() => {
         if (onClose) {
             setIsClosing(true);
             timerRef.current = setTimeout(() => {
-                onClose();
+                onClose?.();
                 setIsClosing(false);
             }, ANIMATION_DELAY);
         }

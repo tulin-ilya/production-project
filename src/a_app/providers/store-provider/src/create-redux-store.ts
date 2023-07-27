@@ -1,6 +1,10 @@
 import { counterReducer } from "@entities/counter";
 import { userReducer } from "@entities/user";
-import type { ReducersMapObject } from "@reduxjs/toolkit";
+import type {
+    CombinedState,
+    Reducer,
+    ReducersMapObject,
+} from "@reduxjs/toolkit";
 import { configureStore } from "@reduxjs/toolkit";
 import { $api } from "@shared/api/api";
 import type { NavigateOptions, To } from "react-router-dom";
@@ -25,7 +29,7 @@ export function createReduxStore(
     const extraArgument: TThunkExtraArguments = { api: $api, navigate };
 
     const store = configureStore({
-        reducer: reducerManager.reduce,
+        reducer: reducerManager.reduce as Reducer<CombinedState<TStateSchema>>,
         devTools: __IS_DEV,
         preloadedState: initialState,
         middleware: (getDefaultMiddleware) =>

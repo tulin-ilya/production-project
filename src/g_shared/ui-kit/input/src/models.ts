@@ -11,6 +11,7 @@ export type TInputProps = TComponentBaseProps &
         /** Автофокус */
         autofocus?: boolean;
         /** Обработчик при введении текста */
+        // eslint-disable-next-line no-unused-vars
         onChange?: (value: string) => void;
         /** Подпись */
         label?: string;

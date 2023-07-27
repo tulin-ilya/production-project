@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import path from "path";
 import type webpack from "webpack";
 import { DefinePlugin } from "webpack";
@@ -5,10 +6,10 @@ import { DefinePlugin } from "webpack";
 module.exports = ({ config }: { config: webpack.Configuration }) => {
     const srcPath = path.resolve("./src");
 
-    config.resolve.modules.push(srcPath);
-    config.resolve.extensions.push(".ts", ".tsx");
+    config!.resolve!.modules!.push(srcPath);
+    config!.resolve!.extensions!.push(".ts", ".tsx");
 
-    config.resolve.alias = {
+    config!.resolve!.alias = {
         "@app": `${srcPath}/a_app`,
         "@processes": `${srcPath}/b_processes`,
         "@pages": `${srcPath}/c_pages`,
@@ -20,7 +21,7 @@ module.exports = ({ config }: { config: webpack.Configuration }) => {
         "@tools": path.resolve("tools"),
     };
 
-    config.plugins.push(
+    config!.plugins!.push(
         new DefinePlugin({
             __IS_DEV: true,
             __BASE_API_HOST: JSON.stringify(""),
