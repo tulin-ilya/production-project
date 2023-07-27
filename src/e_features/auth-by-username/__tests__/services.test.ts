@@ -9,6 +9,9 @@ jest.mock("axios");
 
 const mockedAxios = jest.mocked(axios, true);
 
+const api = mockedAxios;
+const navigate = jest.fn();
+
 describe("loginByUsername", () => {
     let dispatch: Dispatch;
     let getState: () => TStateSchema;
@@ -19,12 +22,12 @@ describe("loginByUsername", () => {
     });
     it("Успешная авторизация", async () => {
         const userValue = { username: "admin", id: "1" };
-        mockedAxios.post.mockReturnValue(Promise.resolve({ data: userValue }));
+        api.post.mockReturnValue(Promise.resolve({ data: userValue }));
 
         const action = loginByUsername({ password: "123", username: "admin" });
-        const result = await action(dispatch, getState, undefined);
+        const result = await action(dispatch, getState, { api, navigate });
 
-        expect(mockedAxios.post).toHaveBeenCalled();
+        expect(api.post).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe("fulfilled");
         expect(result.payload).toEqual(userValue);
         expect(dispatch).toHaveBeenCalledTimes(3);
@@ -34,12 +37,12 @@ describe("loginByUsername", () => {
     });
 
     it("Сервер прислал ошибку", async () => {
-        mockedAxios.post.mockReturnValue(Promise.resolve({ status: 403 }));
+        api.post.mockReturnValue(Promise.resolve({ status: 403 }));
 
         const action = loginByUsername({ password: "123", username: "admin" });
-        const result = await action(dispatch, getState, undefined);
+        const result = await action(dispatch, getState, { api, navigate });
 
-        expect(mockedAxios.post).toHaveBeenCalled();
+        expect(api.post).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe("rejected");
         expect(result.payload).toEqual("error");
         expect(dispatch).toHaveBeenCalledTimes(2);

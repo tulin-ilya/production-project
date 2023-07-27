@@ -23,50 +23,50 @@ jobs:
 
       - run: yarn
 
-  # quality-check:
-  #   needs: install
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       node-version: [14.x]
+  quality-check:
+    needs: install
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
 
-  #   steps:
-  #     - uses: actions/checkout@v3
+    steps:
+      - uses: actions/checkout@v3
 
-  #     - uses: actions/setup-node@v3
-  #       with:
-  #         node-version: ${{ matrix.node-version }}
-  #         cache: yarn
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: yarn
 
-  #     - run: yarn
+      - run: yarn
 
-  #     - run: yarn eslint
+      - run: yarn eslint
 
-  #     - run: yarn stylelint
+      - run: yarn stylelint
 
-  # tests:
-  #   needs: quality-check
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       node-version: [14.x]
+  tests:
+    needs: quality-check
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
 
-  #   steps:
-  #     - name: get repository code
-  #       uses: actions/checkout@v3
+    steps:
+      - name: get repository code
+        uses: actions/checkout@v3
 
-  #     - name: use Node.js ${{ matrix.node-version }}
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: ${{ matrix.node-version }}
-  #         cache: yarn
+      - name: use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: yarn
 
-  #     - run: yarn
+      - run: yarn
 
-  #     # - run: yarn test
+      - run: yarn test
 
-  #     - run: yarn build:prod
+      - run: yarn build:prod
 
-  #     - run: yarn storybook:build
+      - run: yarn storybook:build
 
-  #     - run: yarn test-ui-ci
+      - run: yarn test-ui-ci

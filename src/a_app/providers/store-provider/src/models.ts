@@ -6,7 +6,6 @@ import type { TLoginState } from "@features/auth-by-username";
 import type {
     AnyAction,
     CombinedState,
-    DeepPartial,
     EnhancedStore,
     Reducer,
     ReducersMapObject,
@@ -28,8 +27,8 @@ export type TStateSchemaKey = keyof TStateSchema;
 
 export type TStoreProviderProps = {
     children?: React.ReactNode;
-    initialState?: DeepPartial<TStateSchema>;
-    asyncReducers?: DeepPartial<ReducersMapObject<TStateSchema>>;
+    initialState?: Partial<TStateSchema>;
+    asyncReducers?: Partial<ReducersMapObject<TStateSchema>>;
 };
 
 export type TReducerManager = {
@@ -50,7 +49,7 @@ export type TAppDispatch = ReturnType<typeof createReduxStore>["dispatch"];
 
 export type TThunkExtraArguments = {
     api: AxiosInstance;
-    navigate: (to: To, option?: NavigateOptions) => void;
+    navigate?: (to: To, option?: NavigateOptions) => void;
 };
 
 export type TThunkConfig<ErrorType> = {

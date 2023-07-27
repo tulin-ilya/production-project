@@ -1,12 +1,12 @@
 import "@app/app/styles/index.css";
 
 import { StoreProvider, TStateSchema } from "@app/providers/store-provider";
-import type { DeepPartial, ReducersMapObject } from "@reduxjs/toolkit";
+import { TReducersList } from "@shared/ui-kit/dynamic-module-loader";
 import { Story } from "@storybook/react";
 
 export const StoreDecorator = (
-    state: DeepPartial<TStateSchema>,
-    asyncReducers?: DeepPartial<ReducersMapObject<TStateSchema>>
+    state: Partial<TStateSchema>,
+    asyncReducers?: TReducersList
 ) => {
     return (StoryComponent: Story) => (
         <StoreProvider initialState={state} asyncReducers={asyncReducers}>

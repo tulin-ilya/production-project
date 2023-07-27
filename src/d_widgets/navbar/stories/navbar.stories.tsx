@@ -10,7 +10,11 @@ export default {
     component: NavbarComponent,
     args: ARGS,
     argTypes: ARGS_TYPES,
-    decorators: [StoreDecorator({ login: {} })],
+    decorators: [
+        StoreDecorator({
+            login: { isLoading: false, password: "", username: "" },
+        }),
+    ],
 } as ComponentMeta<typeof NavbarComponent>;
 
 const Template: ComponentStory<typeof NavbarComponent> = (args) => (

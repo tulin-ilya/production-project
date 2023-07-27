@@ -1,4 +1,4 @@
-type TModeClasses = Record<string, string | boolean>;
+type TModeClasses = Record<string, string | boolean | undefined>;
 
 export default (
     mainClass: string,
