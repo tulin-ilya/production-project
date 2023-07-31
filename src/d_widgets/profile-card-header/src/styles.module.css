@@ -1,0 +1,10 @@
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button-wrapper {
+    display: flex;
+    gap: var(--gap-12);
+}
