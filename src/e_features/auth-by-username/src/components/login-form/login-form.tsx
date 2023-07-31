@@ -29,15 +29,9 @@ const LoginForm = memo(({ onSuccess }: TLoginFormProps) => {
         []
     );
 
-    const onChangeUsername = useCallback(
-        (value: string) => {
-            dispatch(loginActions.setUsername(value));
-        },
-        [dispatch]
-    );
-    const onChangePassword = useCallback(
-        (value: string) => {
-            dispatch(loginActions.setPassword(value));
+    const onInputChange = useCallback(
+        (action: "setUsername" | "setPassword") => (value: string) => {
+            dispatch(loginActions[action](value));
         },
         [dispatch]
     );
@@ -64,13 +58,13 @@ const LoginForm = memo(({ onSuccess }: TLoginFormProps) => {
                     </Text>
                 )}
                 <Input
-                    onChange={onChangeUsername}
+                    onChange={onInputChange("setUsername")}
                     label={t("username")}
                     value={username}
                     view={error ? "danger" : "normal"}
                 />
                 <Input
-                    onChange={onChangePassword}
+                    onChange={onInputChange("setPassword")}
                     label={t("password")}
                     value={password}
                     view={error ? "danger" : "normal"}
