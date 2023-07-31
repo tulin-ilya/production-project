@@ -4,5 +4,18 @@
   "firstname": "firstname",
   "lastname": "lastname",
   "type lastname": "type lastname",
-  "type firstname": "type firstname"
+  "type firstname": "type firstname",
+  "something went wrong": "something went wrong 💩",
+  "cancel": "cancel",
+  "save": "save",
+  "age": "age",
+  "country": "country",
+  "city": "city",
+  "cuurrency": "currency",
+  "username": "username",
+  "type username": "type username",
+  "type age": "type age",
+  "select the country": "select the country",
+  "type the city": "type the city",
+  "select the currency": "select the currency"
 }

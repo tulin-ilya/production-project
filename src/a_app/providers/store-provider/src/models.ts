@@ -55,4 +55,6 @@ export type TThunkExtraArguments = {
 export type TThunkConfig<ErrorType> = {
     rejectValue: ErrorType;
     extra: TThunkExtraArguments;
+    dispatch: TAppDispatch;
+    state: TStateSchema;
 };
