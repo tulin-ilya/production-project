@@ -4,6 +4,7 @@ import {
     NORMAL,
     PRIMARY,
     SECONDARY,
+    SUCCESS,
     WARNING,
 } from "@shared/configs/components-view";
 
@@ -13,6 +14,7 @@ export type TView =
     | typeof NORMAL
     | typeof PRIMARY
     | typeof SECONDARY
+    | typeof SUCCESS
     | typeof WARNING;
 
 export type TComponentBaseProps = {
