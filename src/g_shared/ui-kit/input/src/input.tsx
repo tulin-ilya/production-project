@@ -15,6 +15,7 @@ export const Input = memo(
         type = "text",
         label,
         view = "normal",
+        readonly,
         ...props
     }: TInputProps) => {
         const inputRef = useRef<HTMLInputElement>(null);
@@ -40,9 +41,18 @@ export const Input = memo(
                     {...props}
                     ref={inputRef}
                     type={type}
-                    className={cn(styles["input"], styles[view])}
+                    className={cn(
+                        styles["input"],
+                        {
+                            [styles[view]]: readonly,
+                        },
+                        {
+                            [styles["primary"]]: !readonly,
+                        }
+                    )}
                     onChange={onChangeHandler}
                     value={value}
+                    readOnly={readonly}
                 ></input>
             </Text>
         );

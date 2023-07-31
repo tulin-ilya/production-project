@@ -3,7 +3,7 @@ import { InputHTMLAttributes } from "react";
 
 type THTMLInputProps = Omit<
     InputHTMLAttributes<HTMLInputElement>,
-    "onChange" | "value"
+    "onChange" | "value" | "readOnly"
 >;
 
 export type TInputProps = TComponentBaseProps &
@@ -15,6 +15,8 @@ export type TInputProps = TComponentBaseProps &
         onChange?: (value: string) => void;
         /** Подпись */
         label?: string;
-        /** Значение */
+        /** Значение инпута */
         value?: string;
+        /** Только для чтения */
+        readonly?: boolean;
     };
