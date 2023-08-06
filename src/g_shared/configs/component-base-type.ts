@@ -22,4 +22,6 @@ export type TComponentBaseProps = {
     className?: string;
     /** Вид */
     view?: TView;
+    /** Размер компонента */
+    size?: "small" | "medium" | "large";
 };
