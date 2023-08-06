@@ -6,11 +6,11 @@ type THTMLInputProps = Omit<
     "onChange" | "value" | "readOnly"
 >;
 
-export type TInputProps = TComponentBaseProps &
+export type TInputProps = Omit<TComponentBaseProps, "size"> &
     THTMLInputProps & {
         /** Автофокус */
         autofocus?: boolean;
-        /** Обработчик при введении текста */
+        /** Обработчик при вводе текста */
         // eslint-disable-next-line no-unused-vars
         onChange?: (value: string) => void;
         /** Подпись */

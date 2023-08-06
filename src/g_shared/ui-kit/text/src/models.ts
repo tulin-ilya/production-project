@@ -25,7 +25,7 @@ export type TTag = typeof TAGS[number];
 
 export type TTextAlign = "right" | "left" | "center";
 
-export type TTextProps = TComponentBaseProps & {
+export type TTextProps = Omit<TComponentBaseProps, "size"> & {
     align?: TTextAlign;
     Tag?: TTag;
     children: ReactNode;
