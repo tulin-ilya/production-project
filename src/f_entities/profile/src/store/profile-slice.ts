@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import { fetchProfileData } from "../services/fetch-profile-data";
-import { updateProfileData } from "../services/update-pкofile-data";
+import { updateProfileData } from "../services/update-profile-data";
 import { initialState } from "./config";
 import { TProfile } from "./models";
 
@@ -13,7 +13,7 @@ export const profileSlice = createSlice({
             state.readonly = action.payload;
         },
         updateProfile: (state, action: PayloadAction<TProfile>) => {
-            state.currentData = { ...state.data, ...action.payload };
+            state.currentData = { ...state.currentData, ...action.payload };
         },
         cancelChanges: (state) => {
             state.readonly = true;

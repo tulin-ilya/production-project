@@ -1,4 +1,6 @@
 import type { TAppDispatch } from "@app/providers/store-provider";
+import { getCountriesState } from "@entities/countries";
+import { getCurenciesState } from "@entities/currencies";
 import {
     fetchProfileData,
     profileActions,
@@ -12,10 +14,19 @@ import { ProfileCardHeader } from "@widgets/profile-card-header";
 import { memo, useCallback, useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import { TList } from "./models";
+
 const ProfilePage = memo(() => {
     const dispatch = useDispatch<TAppDispatch>();
     const { isLoading, currentData, error, readonly } =
         useSelector(getProfileState);
+
+    const { data: currenciesList = [] } = useSelector(getCurenciesState);
+    const { data: countriesList = [] } = useSelector(getCountriesState);
+
+    const normalizeLists = useCallback((list: TList) => {
+        return list?.map((item) => ({ value: item.name, name: item.name }));
+    }, []);
 
     useEffect(() => {
         dispatch(fetchProfileData());
@@ -42,6 +53,8 @@ const ProfilePage = memo(() => {
                 isLoading={isLoading}
                 readonly={readonly}
                 data={currentData}
+                currenciesList={normalizeLists(currenciesList)}
+                countriesList={normalizeLists(countriesList)}
                 error={error}
                 onChange={onChangeProfile}
             />

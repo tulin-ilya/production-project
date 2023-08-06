@@ -1,5 +1,11 @@
 .profile-card {
     display: flex;
+    align-items: flex-start;
+    gap: var(--gap-24);
+}
+
+.profile-card-item {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: var(--gap-8);

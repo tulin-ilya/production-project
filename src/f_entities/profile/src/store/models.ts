@@ -1,4 +1,5 @@
-import type { TCountry, TCurrency } from "@shared/configs/common-types";
+import type { TCountry } from "@entities/countries";
+import type { TCurrency } from "@entities/currencies";
 
 export type TProfile = {
     firstname?: string;

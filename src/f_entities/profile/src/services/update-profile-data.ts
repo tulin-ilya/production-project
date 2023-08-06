@@ -9,7 +9,7 @@ export const updateProfileData = createAsyncThunk<
     void,
     TThunkConfig<string>
 >("profile/updateProfileData", async (_, thunkAPI) => {
-    const { extra, dispatch, rejectWithValue, getState } = thunkAPI;
+    const { extra, rejectWithValue, getState } = thunkAPI;
 
     const { currentData } = getProfileState(getState());
 

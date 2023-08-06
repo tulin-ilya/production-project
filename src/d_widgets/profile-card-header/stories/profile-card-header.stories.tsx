@@ -1,3 +1,4 @@
+import { StoreDecorator } from "@config/storybook/decorators/store-decorator";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { ProfileCardHeader as ProfileCardHeaderComponent } from "../index";
@@ -8,6 +9,7 @@ export default {
     component: ProfileCardHeaderComponent,
     args: ARGS,
     argTypes: ARGS_TYPES,
+    decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof ProfileCardHeaderComponent>;
 
 const Template: ComponentStory<typeof ProfileCardHeaderComponent> = (args) => (

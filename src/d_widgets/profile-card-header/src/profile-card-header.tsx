@@ -15,10 +15,10 @@ import { TProfileHeaderProps } from "./models";
 import styles from "./styles.module.css";
 
 export const ProfileCardHeader = memo(({ className }: TProfileHeaderProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation("profile");
     const dispatch = useDispatch<TAppDispatch>();
 
-    const { readonly, data, currentData } = useSelector(getProfileState);
+    const { readonly, data, currentData, error } = useSelector(getProfileState);
 
     const isDataDiff = useMemo(
         () => JSON.stringify(data) !== JSON.stringify(currentData),
@@ -37,6 +37,8 @@ export const ProfileCardHeader = memo(({ className }: TProfileHeaderProps) => {
         dispatch(updateProfileData());
         dispatch(profileActions.setReadonly(true));
     }, [dispatch]);
+
+    if (error) return null;
 
     return (
         <div className={cn(styles["profile-header"], className)}>
