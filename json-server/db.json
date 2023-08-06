@@ -1,38 +1,91 @@
 {
-    "posts": [
-        {
-            "id": "1",
-            "title": "json-server",
-            "userId": "1"
-        },
-        {
-            "id": "2",
-            "title": "json-server",
-            "userId": "2"
-        }
-    ],
-    "comments": [
-        {
-            "id": "1",
-            "body": "some comment",
-            "postId": "1"
-        }
-    ],
-    "users": [
-        {
-            "id": "1",
-            "username": "admin",
-            "password": "123"
-        }
-    ],
-    "profile": {
-        "firstname": "Князь",
-        "lastname": "Тьмы",
-        "age": 33,
-        "currency": "RUB",
-        "country": "Russia",
-        "city": "Adler",
-        "username": "admin",
-        "avatar": "https://s460vla.storage.yandex.net/rdisk/acae2810cfec45cfa6a4fd9fbb2e438ad350350beb199ee48547389f6cf2ae99/64bdd185/T9PoAiUvGHr-urdRru0oyO60OyNdM1RhxoZjs8HJ5ZN9ue_YeFZs4i8W9Rdo5NDqyRsPB4J3XQFuziUMJhVEPQ==?uid=0&filename=OIG.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&fsize=79586&hid=3b3fdcf22aa8e744d7dddcb546cc9511&media_type=image&tknv=v2&etag=fb237539ee87a7b89c8612c07cba6be1&rtoken=fuQNal2Cb5Tq&force_default=no&ycrid=na-0fdd59b51e5f9be9331b6f0d60a616ec-downloader12e&ts=601316643ab40&s=bac2c9bab4d9fd7b9d309cd9ee6c20fa3fed2ffdaed4c113455232b423adfa1f&pb=U2FsdGVkX1_Tk27a80xYS2Yx6tQToGfFjmAoFauyW2WbX_sYjVEKievY-RHQ8-xAfFl33ss9DOOFTWx0Wu0CmeHzmeFx8qzvU1gszgahRi0"
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "json-server",
+      "userId": "2"
     }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
+    }
+  ],
+  "profile": {
+    "id": "1",
+    "firstname": "князь",
+    "lastname": "тьмы",
+    "age": "666",
+    "currency": "USD",
+    "country": "Russia",
+    "city": "Adler",
+    "username": "admin",
+    "avatar": "https://memepedia.ru/wp-content/uploads/2019/08/programmist-s-mikrovolnovkoy-1.jpg"
+  },
+  "currencies": [
+    {
+      "id": "1",
+      "name": "EUR"
+    },
+    {
+      "id": "2",
+      "name": "RUB"
+    },
+    {
+      "id": "3",
+      "name": "USD"
+    }
+  ],
+  "countries": [
+    {
+      "id": "1",
+      "name": "Armenia"
+    },
+    {
+      "id": "2",
+      "name": "Belarus"
+    },
+    {
+      "id": "3",
+      "name": "Georgia"
+    },
+    {
+      "id": "4",
+      "name": "German"
+    },
+    {
+      "id": "5",
+      "name": "Great Britain"
+    },
+    {
+      "id": "6",
+      "name": "Kazakhstan"
+    },
+    {
+      "id": "7",
+      "name": "Russia"
+    },
+    {
+      "id": "8",
+      "name": "USA"
+    },
+    {
+      "id": "9",
+      "name": "Ukraine"
+    }
+  ]
 }

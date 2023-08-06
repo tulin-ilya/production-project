@@ -23,7 +23,10 @@ export const TAGS = [
 
 export type TTag = typeof TAGS[number];
 
-export type TTextProps = TComponentBaseProps & {
+export type TTextAlign = "right" | "left" | "center";
+
+export type TTextProps = Omit<TComponentBaseProps, "size"> & {
+    align?: TTextAlign;
     Tag?: TTag;
     children: ReactNode;
 };

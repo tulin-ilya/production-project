@@ -4,3 +4,4 @@ export const PRIMARY = "primary";
 export const SECONDARY = "secondary";
 export const DANGER = "danger";
 export const WARNING = "warning";
+export const SUCCESS = "success";

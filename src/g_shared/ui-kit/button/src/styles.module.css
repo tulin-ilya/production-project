@@ -39,6 +39,14 @@
     font-weight: 700;
 }
 
+.danger {
+    border-color: var(--color-danger);
+}
+
+.success {
+    border-color: var(--color-success);
+}
+
 .disabled {
     opacity: 0.5;
     pointer-events: none;

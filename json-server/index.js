@@ -8,6 +8,8 @@ const server = jsonServer.create();
 
 const router = jsonServer.router(path.resolve(__dirname, "db.json"));
 
+const PRIVATE_PATHS = ["/profile"];
+
 server.use(jsonServer.defaults({}));
 server.use(jsonServer.bodyParser);
 
@@ -46,9 +48,11 @@ server.post("/login", (req, res) => {
 // проверяем, авторизован ли пользователь
 // eslint-disable-next-line
 server.use((req, res, next) => {
-    if (!req.headers.authorization) {
-        return res.status(403).json({ message: "AUTH ERROR" });
-    }
+    PRIVATE_PATHS.forEach((privatePath) => {
+        if (req.url === privatePath && !req.headers.authorization) {
+            return res.status(403).json({ message: "AUTH ERROR" });
+        }
+    });
 
     next();
 });

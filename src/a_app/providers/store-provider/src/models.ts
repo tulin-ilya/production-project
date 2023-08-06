@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
-import type { TCounterState } from "@entities/counter";
+import { TCountriesState } from "@entities/countries";
+import { TCurrenciesState } from "@entities/currencies";
 import type { TProfileState } from "@entities/profile";
 import type { TUserState } from "@entities/user";
 import type { TLoginState } from "@features/auth-by-username";
@@ -16,7 +17,8 @@ import type { NavigateOptions, To } from "react-router-dom";
 import type { createReduxStore } from "./create-redux-store";
 
 export type TStateSchema = {
-    counter: TCounterState;
+    countries: TCountriesState;
+    currencies: TCurrenciesState;
     user: TUserState;
     // Асинхронные редьюсеры
     login?: TLoginState;
@@ -55,4 +57,6 @@ export type TThunkExtraArguments = {
 export type TThunkConfig<ErrorType> = {
     rejectValue: ErrorType;
     extra: TThunkExtraArguments;
+    dispatch: TAppDispatch;
+    state: TStateSchema;
 };

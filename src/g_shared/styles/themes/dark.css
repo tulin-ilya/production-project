@@ -1,14 +1,21 @@
+@import "../vars/global.css";
+
 :root,
 .dark {
     /** Цвет бэкграунда */
     --bg-primary: #1f1f1f;
     --bg-secondary: #303030;
-    --bg-inverted-primary: #fff;
+    --bg-inverted-primary: var(--common-white);
     --bg-inverted-secondary: #f0f0f0;
 
     /** Цвет текста */
-    --color-primary: #fff;
+    --color-primary: var(--common-white);
     --color-secondary: #fff6;
     --color-inverted-primary: #0b1f35;
     --color-inverted-secondary: #0b1f35b3;
+
+    /** Цвета состояний */
+    --color-danger: var(--common-red);
+    --color-warning: var(--common-yellow);
+    --color-success: var(--common-green);
 }
