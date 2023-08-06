@@ -1,4 +1,5 @@
-import { counterReducer } from "@entities/counter";
+import { countriesReducer } from "@entities/countries";
+import { currenciesReducer } from "@entities/currencies";
 import { userReducer } from "@entities/user";
 import type {
     CombinedState,
@@ -20,7 +21,8 @@ export function createReduxStore(
 ) {
     const rootReducer: ReducersMapObject<TStateSchema> = {
         ...asyncReducers,
-        counter: counterReducer,
+        countries: countriesReducer,
+        currencies: currenciesReducer,
         user: userReducer,
     };
 

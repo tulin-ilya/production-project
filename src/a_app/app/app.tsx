@@ -1,6 +1,8 @@
 import "./styles/index.css";
 
 import { AppRouter } from "@app/providers/app-router/app-router";
+import { fetchCountriesData } from "@entities/countries";
+import { fetchCurrenciesData } from "@entities/currencies";
 import { userActions } from "@entities/user";
 import customCN from "@tools/classnames";
 import { Navbar } from "@widgets/navbar";
@@ -14,6 +16,8 @@ const AppCompoenent = () => {
 
     useEffect(() => {
         dispatch(userActions.initAuthData());
+        dispatch(fetchCurrenciesData());
+        dispatch(fetchCountriesData());
     }, [dispatch]);
 
     return (
